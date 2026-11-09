@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.svg">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -2688,6 +2688,8 @@
       
         
       
+        
+      
     
     
     
@@ -2833,6 +2835,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../skills/aie-iron-design/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 3: IRON Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../skills/aie-hw-bringup/SKILL/" class="md-nav__link">
         
   
@@ -2840,7 +2870,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 3: HW Bring-up
+    Phase 4: HW Bring-up
   
 
     
@@ -2868,7 +2898,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Kernel Optimization
+    Phase 5: Kernel Optimization
   
 
     
@@ -2896,7 +2926,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Dataflow Optimization
+    Phase 5: Dataflow Optimization
   
 
     
@@ -2998,6 +3028,8 @@
   
     
     
+      
+        
       
         
       
@@ -3127,6 +3159,34 @@
     
   
     Tensor Access Patterns (taplib)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operators and declarations
   
 
     
@@ -3586,6 +3646,8 @@
       
         
       
+        
+      
     
     
     
@@ -3674,6 +3736,34 @@
     
   
     Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://xilinx.github.io/mlir-aie/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer Dashboard
   
 
     
@@ -4133,10 +4223,10 @@ Here, we add <code>trace=1</code> to indicate that worker should be traced. And 
 <h3 id="customizing-trace-behavior"><u>Customizing Trace Behavior</u><a class="headerlink" href="#customizing-trace-behavior" title="Permanent link">&para;</a></h3>
 <p>The trace configuration chooses helpful default settings so you can trace your design with little additional customization. However, if you want more control over some of these configuration, additional arguments are available in <code>enable_trace</code>:
 * <code>reuse_output_buffer</code> - by default (<code>False</code>), the trace buffer is a dedicated host buffer appended as the last runtime_sequence argument, so enabling trace does not shift your data arguments' indices. Set to <code>True</code> to instead write trace data into the tail of the last output buffer, saving a host buffer. See <a href="#2-configure-host-code-to-read-trace-data-and-write-it-to-a-text-file">below</a> for more details on XRT buffers.
-* <code>coretile_events</code> - which 8 events do we use for all coretiles in array. Search under <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html">AIEXDialect</a> for CoreEvent for the target device: <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html#coreeventaie">aie1</a> &middot; <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html#coreeventaie2">aie2</a> &middot; <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html#coreeventaie2p">aie2p</a>.
-* <code>coremem_events</code> - which 8 events do we use for all core mem in array. Search under <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html">AIEXDialect</a> for MemEvent for the target device: <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html#memeventaie">aie1</a> &middot; <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html#memeventaie2">aie2</a> &middot; <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html#memeventaie2p">aie2p</a>.
-* <code>memtile_events</code> - which 8 events do we use for all memtiles in array. Search under <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html">AIEXDialect</a> for MemTileEvent for the target device: <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html#memtileeventaie">aie1</a> &middot; <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html#memtileeventaie2">aie2</a> &middot; <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html#memtileeventaie2p">aie2p</a>.
-* <code>shimtile_events</code> - which 8 events do we use for all shimtiles in array. Search under <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html">AIEXDialect</a> for ShimTileEvent for the target device: <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html#shimtileeventaie">aie1</a> &middot; <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html#shimtileeventaie2">aie2</a> &middot; <a href="https://xilinx.github.io/mlir-aie/AIEXDialect.html#shimtileeventaie2p">aie2p</a>.
+* <code>coretile_events</code> - which 8 events do we use for all coretiles in array. Search under <a href="../../../AIEXDialect/">AIEXDialect</a> for CoreEvent for the target device: <a href="../../../AIEXDialect/#coreeventaie">aie1</a> &middot; <a href="../../../AIEXDialect/#coreeventaie2">aie2</a> &middot; <a href="../../../AIEXDialect/#coreeventaie2p">aie2p</a>.
+* <code>coremem_events</code> - which 8 events do we use for all core mem in array. Search under <a href="../../../AIEXDialect/">AIEXDialect</a> for MemEvent for the target device: <a href="../../../AIEXDialect/#memeventaie">aie1</a> &middot; <a href="../../../AIEXDialect/#memeventaie2">aie2</a> &middot; <a href="../../../AIEXDialect/#memeventaie2p">aie2p</a>.
+* <code>memtile_events</code> - which 8 events do we use for all memtiles in array. Search under <a href="../../../AIEXDialect/">AIEXDialect</a> for MemTileEvent for the target device: <a href="../../../AIEXDialect/#memtileeventaie">aie1</a> &middot; <a href="../../../AIEXDialect/#memtileeventaie2">aie2</a> &middot; <a href="../../../AIEXDialect/#memtileeventaie2p">aie2p</a>.
+* <code>shimtile_events</code> - which 8 events do we use for all shimtiles in array. Search under <a href="../../../AIEXDialect/">AIEXDialect</a> for ShimTileEvent for the target device: <a href="../../../AIEXDialect/#shimtileeventaie">aie1</a> &middot; <a href="../../../AIEXDialect/#shimtileeventaie2">aie2</a> &middot; <a href="../../../AIEXDialect/#shimtileeventaie2p">aie2p</a>.
 * <code>core_trace_mode</code> - core-tile trace encoding. The default is <code>TraceMode.EventTime</code>; use <code>TraceMode.EventPC</code> from <code>aie.dialects.aie</code> to capture the program counter when a selected core event occurs.</p>
 <div class="highlight"><pre><span></span><code>```python
 ...
@@ -4335,7 +4425,7 @@ Enabling trace in the design alone does not allocate that host buffer.</p>
 <p>With the default (dedicated) mode, we can leave the parameters for <code>enable_trace()</code> / <code>start_trace()</code> to their defaults other than <code>trace_size</code>. Setting <code>reuse_output_buffer=True</code> instead writes trace data after the last output tensor, reusing that argument's buffer with a byte offset equal to the tensor size.</p>
 <p>Once the design is configured to a XRT buffer object, we turn our attention to the host code to read the DDR data and write it to a file.</p>
 <blockquote>
-<p><strong>NOTE</strong> In our example design, we provide a <a href="Makefile">Makefile</a> target <code>run</code> for standard build and <code>trace</code> for trace-enabled build. The trace-enabled build passes the trace buffer size as an argument which is used under the hood to conditionally enable tracing as long as <code>trace_size</code> is &gt; 0. This is also true for the <a href="https://github.com/Xilinx/mlir-aie/tree/main/programming_examples/basic/vector_scalar_mul">Vector Scalar Multiply example</a>.</p>
+<p><strong>NOTE</strong> In our example design, we provide a <a href="Makefile">Makefile</a> target <code>run</code> for standard build and <code>trace_cpp</code> / <code>trace_py</code> for trace-enabled build. The trace-enabled build passes the trace buffer size as an argument which is used under the hood to conditionally enable tracing as long as <code>trace_size</code> is &gt; 0. The <a href="https://github.com/Xilinx/mlir-aie/tree/main/programming_examples/basic/vector_scalar_mul">Vector Scalar Multiply example</a> uses <code>trace</code> for the C++ host and <code>trace_py</code> for the Python host.</p>
 </blockquote>
 <h3 id="2a-cc-host-code-testcpp-runtime_libtest_libxrt_test_wrapperh"><u>(2a) C/C++ Host code (<a href="test.cpp">test.cpp</a>, <a href="https://github.com/Xilinx/mlir-aie/blob/main/runtime_lib/test_lib/xrt_test_wrapper.h">../../../runtime_lib/test_lib/xrt_test_wrapper.h</a>)</u><a class="headerlink" href="#2a-cc-host-code-testcpp-runtime_libtest_libxrt_test_wrapperh" title="Permanent link">&para;</a></h3>
 <p>The main changes needed for the host code is declare a buffer object for trace data and pass that buffer object to the XRT kernel function call. This looks like the following snippets of code:</p>
@@ -4423,7 +4513,7 @@ In [test.cpp](./test.cpp)
 </li>
 </ul>
 <p>In the example simplified <code>vector_scalar_mul</code> design, we can build the complete design, including the C/C++ host code <a href="test.cpp">test.cpp</a> by running:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>make<span class="w"> </span>trace
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>make<span class="w"> </span>trace_cpp
 </code></pre></div></p>
 <h3 id="2b-python-host-code-testpy-pythonutilshostruntimehostruntimepy"><u>(2b) Python Host code (<a href="test.py">test.py</a>, <a href="https://github.com/Xilinx/mlir-aie/blob/main/python/utils/hostruntime/hostruntime.py">../../../python/utils/hostruntime/hostruntime.py</a>)</u><a class="headerlink" href="#2b-python-host-code-testpy-pythonutilshostruntimehostruntimepy" title="Permanent link">&para;</a></h3>
 <p>In the <a href="Makefile">Makefile</a>, we also have a <code>trace_py</code> target which calls the python host code <code>test.py</code> instead of the C/C++ host code <code>test.cpp</code>.</p>
@@ -4437,9 +4527,9 @@ In [test.cpp](./test.cpp)
 <p>The relevant CLI arguments (added by <code>aie.utils.hostruntime.argparse.add_runtime_args</code>) are:
 - <code>-t</code> / <code>--trace_size</code>: Trace buffer size in bytes. Tracing is enabled when this is &gt; 0.
 - <code>--trace-file</code>: Path to write raw trace data (default: <code>trace.txt</code>).
-- <code>--ddr-id</code>: DDR buffer index for trace (0-4, or -1 to append after last tensor). Default is 4.</p>
+- <code>--ddr-id</code>: Legacy trace buffer index option; ignored by <code>test_utils.create_npu_kernel()</code> in this Python host path.</p>
 <blockquote>
-<p><strong>IMPORTANT</strong>: The <code>ddr_id</code> value (set via <code>--ddr-id</code>) <strong>must match</strong> the <code>ddr_id</code> parameter in your IRON <code>enable_trace()</code> call, or buffer allocation will be incorrect.</p>
+<p><strong>IMPORTANT</strong>: <code>enable_trace()</code> has no <code>ddr_id</code> parameter — the trace buffer's host argument index is computed automatically: by default it's appended after your design's other buffers, or (with <code>reuse_output_buffer=True</code>) folded into the last output buffer. The host's <code>TraceConfig.reuse_output_buffer</code> must match the <code>reuse_output_buffer</code> argument to <code>enable_trace()</code> / <code>start_trace()</code>. When using <code>test_utils.create_npu_kernel(opts)</code>, set <code>opts.reuse_output_buffer</code> accordingly; changing <code>--ddr-id</code> has no effect on buffer allocation.</p>
 </blockquote>
 <h4 id="traceconfig-manual-setup">TraceConfig (manual setup)<a class="headerlink" href="#traceconfig-manual-setup" title="Permanent link">&para;</a></h4>
 <p>For custom host code, you can create a <a href="https://github.com/Xilinx/mlir-aie/blob/main/python/utils/trace/config.py"><code>TraceConfig</code></a> directly and pass it to <a href="https://github.com/Xilinx/mlir-aie/blob/main/python/utils/npukernel.py"><code>NPUKernel</code></a>:</p>
@@ -4448,12 +4538,12 @@ In [test.cpp](./test.cpp)
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">trace_config</span> <span class="o">=</span> <span class="n">TraceConfig</span><span class="p">(</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="n">trace_size</span><span class="o">=</span><span class="mi">8192</span><span class="p">,</span>                <span class="c1"># Buffer size in bytes</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="n">trace_file</span><span class="o">=</span><span class="s2">&quot;trace.txt&quot;</span><span class="p">,</span>         <span class="c1"># Output file for raw trace data (default)</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="n">trace_file</span><span class="o">=</span><span class="s2">"trace.txt"</span><span class="p">,</span>         <span class="c1"># Output file for raw trace data (default)</span>
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">)</span>
 <a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
 <a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="n">npu_kernel</span> <span class="o">=</span> <span class="n">NPUKernel</span><span class="p">(</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    <span class="n">xclbin_path</span><span class="o">=</span><span class="s2">&quot;build/final.xclbin&quot;</span><span class="p">,</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    <span class="n">insts_path</span><span class="o">=</span><span class="s2">&quot;build/insts.bin&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    <span class="n">xclbin_path</span><span class="o">=</span><span class="s2">"build/final.xclbin"</span><span class="p">,</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    <span class="n">insts_path</span><span class="o">=</span><span class="s2">"build/insts.bin"</span><span class="p">,</span>
 <a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    <span class="n">trace_config</span><span class="o">=</span><span class="n">trace_config</span><span class="p">,</span>
 <a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="p">)</span>
 </code></pre></div>
@@ -4475,8 +4565,8 @@ of the host:</p>
 <a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="p">):</span>
 <a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    <span class="n">line_size</span> <span class="o">=</span> <span class="n">N</span> <span class="o">//</span> <span class="mi">4</span>
 <a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    <span class="n">line_ty</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[(</span><span class="n">line_size</span><span class="p">,),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">]]</span>
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>    <span class="n">of_in</span> <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span><span class="n">line_ty</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;in&quot;</span><span class="p">)</span>
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>    <span class="n">of_out</span> <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span><span class="n">line_ty</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;out&quot;</span><span class="p">)</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>    <span class="n">of_in</span> <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span><span class="n">line_ty</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"in"</span><span class="p">)</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>    <span class="n">of_out</span> <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span><span class="n">line_ty</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"out"</span><span class="p">)</span>
 <a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>    <span class="n">pt</span> <span class="o">=</span> <span class="n">kernels</span><span class="o">.</span><span class="n">passthrough</span><span class="p">(</span><span class="n">tile_size</span><span class="o">=</span><span class="n">line_size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
 <a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">core_fn</span><span class="p">(</span><span class="n">of_in</span><span class="p">,</span> <span class="n">of_out</span><span class="p">,</span> <span class="n">pt</span><span class="p">):</span>
@@ -4513,7 +4603,7 @@ of the host:</p>
 <a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1"># With trace — pass a TraceConfig, then read parsed output back out.</span>
 <a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="n">trace_cfg</span> <span class="o">=</span> <span class="n">TraceConfig</span><span class="p">(</span><span class="n">trace_size</span><span class="o">=</span><span class="mi">8192</span><span class="p">)</span>
 <a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="n">passthrough_with_trace</span><span class="p">(</span><span class="n">in_t</span><span class="p">,</span> <span class="n">out_t</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="n">trace_config</span><span class="o">=</span><span class="n">trace_cfg</span><span class="p">)</span>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="n">trace_cfg</span><span class="o">.</span><span class="n">trace_to_json</span><span class="p">(</span><span class="n">trace_cfg</span><span class="o">.</span><span class="n">physical_mlir_path</span><span class="p">,</span> <span class="s2">&quot;trace.json&quot;</span><span class="p">)</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="n">trace_cfg</span><span class="o">.</span><span class="n">trace_to_json</span><span class="p">(</span><span class="n">trace_cfg</span><span class="o">.</span><span class="n">physical_mlir_path</span><span class="p">,</span> <span class="s2">"trace.json"</span><span class="p">)</span>
 </code></pre></div>
 <p>Two side effects of the call worth knowing about:</p>
 <ul>
@@ -4560,7 +4650,7 @@ of the host:</p>
 <h2 id="exercises"><u>Exercises</u><a class="headerlink" href="#exercises" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Let's give tracing a try. In this directory, we will be examining a simplified version of the <code>vector scalar multiply</code> example. Run <code>make trace</code>. This compiles the design, generates a trace data file, and runs <code>parse.py</code> to generate the <code>trace_4b.json</code> waveform file.</p>
+<p>Let's give tracing a try. In this directory, we will be examining a simplified version of the <code>vector scalar multiply</code> example. Run <code>make trace_py</code> (or <code>make trace_cpp</code> for the C++ host). This compiles the design, generates a trace data file, and runs <code>parse.py</code> to generate the <code>trace_4b.json</code> waveform file.</p>
 <p>Open this waveform json in http://ui.perfetto.dev. If you zoom into the region of interest with the keyboard shortcut keys W and S to zoom in and out respectively and A and D to pan left and right. You should see a wave like the following:</p>
 <p><img src="../../assets/trace_vector_scalar_mul1.png" title="AIE-ML Vector Unit." height=250></p>
 <p>Based on this wave, You can mouse over each chunk of continguous data for <code>PortRunning0</code> (input dma port) and <code>PortRunning1</code> (output dma port). What is the chunk size?
@@ -4697,7 +4787,7 @@ This should match iteration loop bounds in our example design.</p>
     
     
     
-    <a href="mailto:aup@amd.com" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
+    <a href="https://www.amd.com/en/corporate/university-program.html" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
     </a>
   
@@ -4716,10 +4806,10 @@ This should match iteration loop bounds in our example design.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

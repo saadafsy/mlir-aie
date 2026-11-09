@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://xilinx.github.io/mlir-aie/dev/skills/aie-hw-bringup/SKILL/">
       
       
-        <link rel="prev" href="../../aie-dataflow-presim/SKILL/">
+        <link rel="prev" href="../../aie-iron-design/SKILL/">
       
       
         <link rel="next" href="../../aie-kernel-opt/SKILL/">
@@ -25,18 +25,18 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.svg">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
-        <title>Phase 3: HW Bring-up - IRON / MLIR-AIE</title>
+        <title>Phase 4: HW Bring-up - IRON / MLIR-AIE</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Phase 3: HW Bring-up
+              Phase 4: HW Bring-up
             
           </span>
         </div>
@@ -2410,6 +2410,8 @@
       
         
       
+        
+      
     
     
     
@@ -2555,6 +2557,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aie-iron-design/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 3: IRON Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2574,7 +2604,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 3: HW Bring-up
+    Phase 4: HW Bring-up
   
 
     
@@ -2592,7 +2622,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 3: HW Bring-up
+    Phase 4: HW Bring-up
   
 
     
@@ -2662,10 +2692,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#checklist-before-moving-to-optimization-aie-kernel-opt--aie-dataflow-opt" class="md-nav__link">
+  <a href="#checklist-before-moving-to-phase-5-optimization-aie-kernel-opt--aie-dataflow-opt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Checklist before moving to optimization (aie-kernel-opt / aie-dataflow-opt)
+        Checklist before moving to phase 5, optimization (aie-kernel-opt / aie-dataflow-opt)
       
     </span>
   </a>
@@ -2695,7 +2725,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Kernel Optimization
+    Phase 5: Kernel Optimization
   
 
     
@@ -2723,7 +2753,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Dataflow Optimization
+    Phase 5: Dataflow Optimization
   
 
     
@@ -2825,6 +2855,8 @@
   
     
     
+      
+        
       
         
       
@@ -2954,6 +2986,34 @@
     
   
     Tensor Access Patterns (taplib)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operators and declarations
   
 
     
@@ -3413,6 +3473,8 @@
       
         
       
+        
+      
     
     
     
@@ -3501,6 +3563,34 @@
     
   
     Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://xilinx.github.io/mlir-aie/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer Dashboard
   
 
     
@@ -3648,10 +3738,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#checklist-before-moving-to-optimization-aie-kernel-opt--aie-dataflow-opt" class="md-nav__link">
+  <a href="#checklist-before-moving-to-phase-5-optimization-aie-kernel-opt--aie-dataflow-opt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Checklist before moving to optimization (aie-kernel-opt / aie-dataflow-opt)
+        Checklist before moving to phase 5, optimization (aie-kernel-opt / aie-dataflow-opt)
       
     </span>
   </a>
@@ -3732,10 +3822,12 @@ SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 -->
 
 <h1 id="hardware-bring-up-against-a-reference-the-minimal-functional-version-phase">Hardware bring-up against a reference (the "minimal functional version" phase)<a class="headerlink" href="#hardware-bring-up-against-a-reference-the-minimal-functional-version-phase" title="Permanent link">&para;</a></h1>
-<p>Third of four porting phases (see <code>aie-model-baseline</code> for the oracle this
-phase compares against, <code>aie-dataflow-presim</code> for the simulation that
-should already have caught topology/deadlock bugs before this phase
-starts, <code>aie-kernel-opt</code>/<code>aie-dataflow-opt</code> for optimization afterward).</p>
+<p>Fourth of five porting phases (see <code>aie-model-baseline</code> for phase 1, the
+oracle this phase compares against; <code>aie-dataflow-presim</code> for phase 2, the
+simulation that should already have caught topology/deadlock bugs before
+this phase starts; <code>aie-iron-design</code> for phase 3, the design being brought
+up; <code>aie-kernel-opt</code>/<code>aie-dataflow-opt</code> for phase 5, optimization
+afterward).</p>
 <p>Simulation catches deadlocks and math bugs cheaply, but it can't catch
 everything — real hardware has memory budgets, real DMA timing, and real
 toolchain behavior that a mock doesn't model. This phase is about finding
@@ -3817,7 +3909,7 @@ squeezing the existing kernel by shrinking precision or unrolling less.
 Precision/unroll cuts trade away exactly the correctness or performance
 this phase is trying to establish; a tile split is a dataflow decision
 that doesn't cost either.</p>
-<h2 id="checklist-before-moving-to-optimization-aie-kernel-opt--aie-dataflow-opt">Checklist before moving to optimization (<code>aie-kernel-opt</code> / <code>aie-dataflow-opt</code>)<a class="headerlink" href="#checklist-before-moving-to-optimization-aie-kernel-opt--aie-dataflow-opt" title="Permanent link">&para;</a></h2>
+<h2 id="checklist-before-moving-to-phase-5-optimization-aie-kernel-opt--aie-dataflow-opt">Checklist before moving to phase 5, optimization (<code>aie-kernel-opt</code> / <code>aie-dataflow-opt</code>)<a class="headerlink" href="#checklist-before-moving-to-phase-5-optimization-aie-kernel-opt--aie-dataflow-opt" title="Permanent link">&para;</a></h2>
 <ul>
 <li>[ ] Every block/layer brought up and validated bit-exact on real
       hardware, incrementally, not all at once</li>
@@ -3873,7 +3965,7 @@ that doesn't cost either.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../aie-dataflow-presim/SKILL/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Phase 2: Dataflow Pre-Sim">
+          <a href="../../aie-iron-design/SKILL/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Phase 3: IRON Design">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3883,20 +3975,20 @@ that doesn't cost either.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Phase 2: Dataflow Pre-Sim
+                Phase 3: IRON Design
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../aie-kernel-opt/SKILL/" class="md-footer__link md-footer__link--next" aria-label="Next: Phase 4: Kernel Optimization">
+          <a href="../../aie-kernel-opt/SKILL/" class="md-footer__link md-footer__link--next" aria-label="Next: Phase 5: Kernel Optimization">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Phase 4: Kernel Optimization
+                Phase 5: Kernel Optimization
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3947,7 +4039,7 @@ that doesn't cost either.</p>
     
     
     
-    <a href="mailto:aup@amd.com" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
+    <a href="https://www.amd.com/en/corporate/university-program.html" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
     </a>
   
@@ -3966,10 +4058,10 @@ that doesn't cost either.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

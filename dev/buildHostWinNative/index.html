@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.svg">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -2554,6 +2554,8 @@
       
         
       
+        
+      
     
     
     
@@ -2699,6 +2701,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../skills/aie-iron-design/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 3: IRON Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../skills/aie-hw-bringup/SKILL/" class="md-nav__link">
         
   
@@ -2706,7 +2736,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 3: HW Bring-up
+    Phase 4: HW Bring-up
   
 
     
@@ -2734,7 +2764,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Kernel Optimization
+    Phase 5: Kernel Optimization
   
 
     
@@ -2762,7 +2792,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Dataflow Optimization
+    Phase 5: Dataflow Optimization
   
 
     
@@ -2864,6 +2894,8 @@
   
     
     
+      
+        
       
         
       
@@ -2993,6 +3025,34 @@
     
   
     Tensor Access Patterns (taplib)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operators and declarations
   
 
     
@@ -3452,6 +3512,8 @@
       
         
       
+        
+      
     
     
     
@@ -3540,6 +3602,34 @@
     
   
     Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://xilinx.github.io/mlir-aie/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer Dashboard
   
 
     
@@ -3870,7 +3960,7 @@ SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception -->
 </ul>
 <h2 id="2-update-and-verify-the-npu-driver">2. Update and verify the NPU driver<a class="headerlink" href="#2-update-and-verify-the-npu-driver" title="Permanent link">&para;</a></h2>
 <p>Ryzen™ AI / XDNA™ chipset driver updates are distributed through the AMD™ Software / Adrenalin™ application. Install the latest driver available for the system, then verify that the NPU is accessible:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="s2">&quot;C:\Windows\System32\AMD\xrt-smi.exe&quot;</span> examine
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="s2">"C:\Windows\System32\AMD\xrt-smi.exe"</span> examine
 </code></pre></div>
 <p>NPU Driver Version <strong>32.0.20101.3760</strong> (XRT Version <strong>2.21.0</strong>) is the minimum supported by this repository on Windows. Older versions may work in many cases, but they are not recommended.</p>
 <h2 id="3-install-the-windows-xrt-sdk">3. Install the Windows XRT SDK<a class="headerlink" href="#3-install-the-windows-xrt-sdk" title="Permanent link">&para;</a></h2>
@@ -3976,9 +4066,9 @@ Install it to `C:\OpenSSL-Win64`, not the default under `C:\Program Files`. The 
 
 From an x64 Native Tools prompt in a configured checkout, set the OpenSSL location and CMake arguments:
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">set</span> <span class="s2">&quot;OPENSSL_ROOT_DIR=C:\OpenSSL-Win64&quot;</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">set</span> <span class="s2">&quot;PATH=</span><span class="nv">%OPENSSL_ROOT_DIR%</span><span class="s2">\bin;</span><span class="nv">%PATH%</span><span class="s2">&quot;</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">set</span> <span class="s2">&quot;CMAKE_ARGS=-DOPENSSL_ROOT_DIR=</span><span class="nv">%OPENSSL_ROOT_DIR%</span><span class="s2"> -DOPENSSL_USE_STATIC_LIBS=TRUE&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">set</span> <span class="s2">"OPENSSL_ROOT_DIR=C:\OpenSSL-Win64"</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">set</span> <span class="s2">"PATH=</span><span class="nv">%OPENSSL_ROOT_DIR%</span><span class="s2">\bin;</span><span class="nv">%PATH%</span><span class="s2">"</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">set</span> <span class="s2">"CMAKE_ARGS=-DOPENSSL_ROOT_DIR=</span><span class="nv">%OPENSSL_ROOT_DIR%</span><span class="s2"> -DOPENSSL_USE_STATIC_LIBS=TRUE"</span>
 </code></pre></div>
 
 ### B.2 Build the wheels
@@ -4036,20 +4126,20 @@ From an x64 Native Tools prompt at the checkout root:
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">call</span> .\iron_env.cmd
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
 <a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1">REM Download and unpack the MLIR wheel pinned by utils/clone-llvm.sh</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="k">for</span> <span class="k">/f</span> <span class="s2">&quot;usebackq delims=&quot;</span> <span class="nv">%v in (`&quot;C:\Program Files\Git\bin\bash.exe&quot; utils/clone-llvm.sh --get-wheel-version`) do set MLIR_VERSION=%</span>v
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="k">for</span> <span class="k">/f</span> <span class="s2">"usebackq delims="</span> <span class="nv">%v in (`"C:\Program Files\Git\bin\bash.exe" utils/clone-llvm.sh --get-wheel-version`) do set MLIR_VERSION=%</span>v
 <a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>mkdir my_install
 <a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>pushd my_install
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>curl.exe -fL -o <span class="s2">&quot;mlir-</span><span class="nv">%MLIR_VERSION%</span><span class="s2">-py3-none-win_amd64.whl&quot;</span> <span class="s2">&quot;https://github.com/Xilinx/mlir-aie/releases/download/mlir-distro/mlir-</span><span class="nv">%MLIR_VERSION%</span><span class="s2">-py3-none-win_amd64.whl&quot;</span>
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>python -c <span class="s2">&quot;import zipfile,glob; zipfile.ZipFile(glob.glob(&#39;mlir-*.whl&#39;)[0]).extractall(&#39;.&#39;)&quot;</span>
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>REM Point the wheel&#39;s LLVMExports.cmake at this machine&#39;s DIA SDK
-<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>python -c <span class="s2">&quot;import sys; sys.path.insert(0, r&#39;..\utils\mlir_aie_wheels\scripts&#39;); from pathlib import Path; import download_mlir; download_mlir._fixup_llvm_diaguids(Path(&#39;mlir&#39;))&quot;</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>curl.exe -fL -o <span class="s2">"mlir-</span><span class="nv">%MLIR_VERSION%</span><span class="s2">-py3-none-win_amd64.whl"</span> <span class="s2">"https://github.com/Xilinx/mlir-aie/releases/download/mlir-distro/mlir-</span><span class="nv">%MLIR_VERSION%</span><span class="s2">-py3-none-win_amd64.whl"</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>python -c <span class="s2">"import zipfile,glob; zipfile.ZipFile(glob.glob('mlir-*.whl')[0]).extractall('.')"</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>REM Point the wheel's LLVMExports.cmake at this machine's DIA SDK
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>python -c <span class="s2">"import sys; sys.path.insert(0, r'..\utils\mlir_aie_wheels\scripts'); from pathlib import Path; import download_mlir; download_mlir._fixup_llvm_diaguids(Path('mlir'))"</span>
 <a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>REM Future-dated wheel timestamps make ninja loop; stamp them to the past
-<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>python -c <span class="s2">&quot;import os; [os.utime(os.path.join(r,f),(315600000,315600000)) for r,_,fs in os.walk(&#39;mlir&#39;) for f in fs]&quot;</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>python -c <span class="s2">"import os; [os.utime(os.path.join(r,f),(315600000,315600000)) for r,_,fs in os.walk('mlir') for f in fs]"</span>
 <a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>popd
 <a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
-<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>for /f <span class="s2">&quot;usebackq delims=&quot;</span> <span class="nv">%p in (`python -c &quot;import sys; print(sys.executable)&quot;`) do set PYTHON_EXE=%</span>p
-<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>set <span class="s2">&quot;EXTRA_CMAKE_ARGS=-DCMAKE_C_COMPILER=cl -DCMAKE_CXX_COMPILER=cl -DAIE_ENABLE_PYTHON_PASSES=OFF -DAIE_ENABLE_XRT_PYTHON_BINDINGS=ON -DXRT_ROOT=</span><span class="nv">%XRT_ROOT:\=/%</span><span class="s2"> -DPython3_EXECUTABLE=</span><span class="nv">%PYTHON_EXE:\=/%</span><span class="s2"> -DOPENSSL_ROOT_DIR=C:/OpenSSL-Win64 -DOPENSSL_USE_STATIC_LIBS=TRUE&quot;</span>
-<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="s2">&quot;C:\Program Files\Git\bin\bash.exe&quot;</span> utils/build-mlir-aie-from-wheels.sh my_install/mlir build install <span class="s2">&quot;</span><span class="nv">%PEANO_INSTALL_DIR:\=/%</span><span class="s2">&quot;</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>for /f <span class="s2">"usebackq delims="</span> <span class="nv">%p in (`python -c "import sys; print(sys.executable)"`) do set PYTHON_EXE=%</span>p
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>set <span class="s2">"EXTRA_CMAKE_ARGS=-DCMAKE_C_COMPILER=cl -DCMAKE_CXX_COMPILER=cl -DAIE_ENABLE_PYTHON_PASSES=OFF -DAIE_ENABLE_XRT_PYTHON_BINDINGS=ON -DXRT_ROOT=</span><span class="nv">%XRT_ROOT:\=/%</span><span class="s2"> -DPython3_EXECUTABLE=</span><span class="nv">%PYTHON_EXE:\=/%</span><span class="s2"> -DOPENSSL_ROOT_DIR=C:/OpenSSL-Win64 -DOPENSSL_USE_STATIC_LIBS=TRUE"</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="s2">"C:\Program Files\Git\bin\bash.exe"</span> utils/build-mlir-aie-from-wheels.sh my_install/mlir build install <span class="s2">"</span><span class="nv">%PEANO_INSTALL_DIR:\=/%</span><span class="s2">"</span>
 </code></pre></div>
 
 The compiler is pinned to `cl` so that CMake doesn't pick up a `clang++` on `PATH`. Inside a `.cmd` script, write `%%v` and `%%p` instead of `%v` and `%p`.
@@ -4057,7 +4147,7 @@ The compiler is pinned to `cl` so that CMake doesn't pick up a `clang++` on `PAT
 ### C.3 Run the tests
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">call</span> .\iron_env.cmd
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">set</span> <span class="s2">&quot;PATH=C:\Program Files\Git\bin;</span><span class="nv">%PATH%</span><span class="s2">;C:\Program Files\LLVM\bin&quot;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">set</span> <span class="s2">"PATH=C:\Program Files\Git\bin;</span><span class="nv">%PATH%</span><span class="s2">;C:\Program Files\LLVM\bin"</span>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>ninja -C build check-aie
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>ninja -C build check-aie-concurrency
@@ -4179,7 +4269,7 @@ Git's `bin` goes first so that `bash` resolves to Git's bash rather than the WSL
     
     
     
-    <a href="mailto:aup@amd.com" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
+    <a href="https://www.amd.com/en/corporate/university-program.html" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
     </a>
   
@@ -4198,10 +4288,10 @@ Git's `bin` goes first so that `bash` resolves to Git's bash rather than the WSL
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

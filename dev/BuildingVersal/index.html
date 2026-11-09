@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.svg">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -2499,6 +2499,8 @@
       
         
       
+        
+      
     
     
     
@@ -2644,6 +2646,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../skills/aie-iron-design/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 3: IRON Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../skills/aie-hw-bringup/SKILL/" class="md-nav__link">
         
   
@@ -2651,7 +2681,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 3: HW Bring-up
+    Phase 4: HW Bring-up
   
 
     
@@ -2679,7 +2709,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Kernel Optimization
+    Phase 5: Kernel Optimization
   
 
     
@@ -2707,7 +2737,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Dataflow Optimization
+    Phase 5: Dataflow Optimization
   
 
     
@@ -2809,6 +2839,8 @@
   
     
     
+      
+        
       
         
       
@@ -2938,6 +2970,34 @@
     
   
     Tensor Access Patterns (taplib)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operators and declarations
   
 
     
@@ -3397,6 +3457,8 @@
       
         
       
+        
+      
     
     
     
@@ -3485,6 +3547,34 @@
     
   
     Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://xilinx.github.io/mlir-aie/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer Dashboard
   
 
     
@@ -3704,10 +3794,10 @@ part of the actively-tested Ryzen™ AI (NPU) path.</p>
 </div>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>lld
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cmake 3.20.6
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cmake 3.30+
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ninja 1.8.2
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Xilinx Vitis 2023.2
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>python 3.8.x and pip
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>python 3.11+ and pip
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>virtualenv
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>pip3 install rich pybind11 numpy
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>clang/llvm 14+ from source https://github.com/llvm/llvm-project
@@ -3717,9 +3807,9 @@ part of the actively-tested Ryzen™ AI (NPU) path.</p>
 <p>NOTE: Using the Vitis recommended <code>settings64.sh</code> script to set up your environement can cause tool conflicts. Setup your environment in the following order for aietools and Vitis:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>export PATH=$PATH:&lt;Vitis_install_path&gt;/Vitis/2023.2/aietools/bin:&lt;Vitis_install_path&gt;/Vitis/2023.2/bin
 </code></pre></div>
-<p>The cmake and python packages prerequisites can be satisfied by sourcing the <code>utils/setup_python_packages.sh</code> script. See step 2 of the build instructions. 
+<p>The cmake and python packages prerequisites can be satisfied by sourcing the <code>utils/setup_python_packages.sh</code> script. See step 2 of the build instructions.
 This script requires <code>virtualenv</code>.</p>
-<p>clang/llvm 14+ are recommended to be built with the provided scripts. See step 3. of the build instructions. </p>
+<p>clang/llvm 14+ are recommended to be built with the provided scripts. See step 3. of the build instructions.</p>
 <h2 id="building-on-x86-for-mlir-aie-development">Building on X86 for mlir-aie development<a class="headerlink" href="#building-on-x86-for-mlir-aie-development" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -3734,10 +3824,10 @@ directory of the <code>mlir-aie</code> repository cloned above.</strong></p>
 <p>Source <code>utils/setup_python_packages.sh</code> to setup the prerequisite python
     packages. This script creates and installs the python packages
     listed in <code>python/requirements.txt</code> and <code>python/requirements_dev.txt</code> in
-    a virtual python environment called 'sandbox', then it enters the sandbox:
+    a virtual python environment called <code>ironenv</code>, then it enters the environment:
     <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>source utils/setup_python_packages.sh
 </code></pre></div></p>
-<p>If you need to exit the sandbox later, type <code>deactivate</code>.  If you
+<p>If you need to exit the environment later, type <code>deactivate</code>.  If you
 have a recent Linux distribution, you might not need this, as you
 are able to have all the required packages from the distribution.</p>
 </li>
@@ -3777,8 +3867,8 @@ This will build LLVM in <code>llvm/build</code> and install the LLVM binaries un
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>source &lt;Vitis Install Path&gt;/settings64.sh
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>./utils/build-mlir-aie.sh &lt;llvm dir&gt;/&lt;build dir&gt;
 </code></pre></div>
-<p>This will create a <code>build</code> and <code>install</code> folder in the directory that you cloned MLIR AIE into. </p>
-<p>The MLIR AIE tools will be able to generate binaries targetting a combination of AIEngine and ARM/x86 processors. </p>
+<p>This will create a <code>build</code> and <code>install</code> folder in the directory that you cloned MLIR AIE into.</p>
+<p>The MLIR AIE tools will be able to generate binaries targetting a combination of AIEngine and ARM/x86 processors.</p>
 </li>
 <li>
 <p>In order to run all the tools, it is necessary to add some paths into your environment. This can be
@@ -3913,7 +4003,7 @@ Following the <a href="../Platform/">platform build steps</a> will create such a
     
     
     
-    <a href="mailto:aup@amd.com" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
+    <a href="https://www.amd.com/en/corporate/university-program.html" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
     </a>
   
@@ -3932,10 +4022,10 @@ Following the <a href="../Platform/">platform build steps</a> will create such a
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

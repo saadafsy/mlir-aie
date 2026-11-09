@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.svg">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -2781,6 +2781,8 @@
       
         
       
+        
+      
     
     
     
@@ -2926,6 +2928,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../skills/aie-iron-design/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 3: IRON Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../skills/aie-hw-bringup/SKILL/" class="md-nav__link">
         
   
@@ -2933,7 +2963,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 3: HW Bring-up
+    Phase 4: HW Bring-up
   
 
     
@@ -2961,7 +2991,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Kernel Optimization
+    Phase 5: Kernel Optimization
   
 
     
@@ -2989,7 +3019,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Dataflow Optimization
+    Phase 5: Dataflow Optimization
   
 
     
@@ -3091,6 +3121,8 @@
   
     
     
+      
+        
       
         
       
@@ -3220,6 +3252,34 @@
     
   
     Tensor Access Patterns (taplib)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operators and declarations
   
 
     
@@ -3679,6 +3739,8 @@
       
         
       
+        
+      
     
     
     
@@ -3767,6 +3829,34 @@
     
   
     Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://xilinx.github.io/mlir-aie/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer Dashboard
   
 
     
@@ -4388,7 +4478,7 @@ Accumulators are wider than the vector registers so that sums of products keep t
 <a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">  </span><span class="n">event1</span><span class="p">();</span>
 <a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="p">}</span>
 </code></pre></div></p>
-<p><a href="https://github.com/Xilinx/mlir-aie/blob/main/aie_kernels/eltwise/scale.cc">scale.cc</a> also has a specialization for <code>int32_t</code>. It is the same loop with <code>vec_factor = 16</code> and an <code>acc64</code> accumulator.</p>
+<p><a href="https://github.com/Xilinx/mlir-aie/blob/main/aie_kernels/eltwise/scale.cc">scale.cc</a> also has a specialization for <code>int32_t</code>, with an <code>acc64</code> accumulator. On AIE2P it uses <code>vec_factor = 32</code> (a 32-lane <code>acc64</code> accumulator, so a 16-lane multiply would leave half of it idle) plus a one-off remainder pass when <code>SCALE_ELEMS</code> isn't a multiple of 32; on AIE2 it falls back to <code>vec_factor = 16</code>.</p>
 <p>Instead of one multiply per element, each iteration now loads 32 elements, multiplies them in one vector operation, and stores 32 results, so the loop runs <code>SCALE_ELEMS / 32</code> times. <code>AIE_PREPARE_FOR_PIPELINING</code> is a loop pragma from <a href="https://github.com/Xilinx/mlir-aie/blob/main/aie_kernels/aie_kernel_utils.h">aie_kernel_utils.h</a>. What it does depends on the compiler, as we will see below.</p>
 <blockquote>
 <p><strong>NOTE</strong> - AIE kernels can also be written directly with the low-level intrinsics that the AIE API is built on. Intrinsics are specific to one AIE generation, while the AIE API is portable across them.</p>
@@ -4452,6 +4542,7 @@ Accumulators are wider than the vector registers so that sums of products keep t
 </tbody>
 </table>
 <h2 id="vectorization-exercises"><u>Vectorization Exercises</u><a class="headerlink" href="#vectorization-exercises" title="Permanent link">&para;</a></h2>
+<p>The cycle counts in these exercises are a worked example from when this section was written; today's figures for this kernel (<code>scale</code> in <code>aie.iron.kernels</code>) are on <a href="https://xilinx.github.io/mlir-aie/dashboard/#view=kernel&amp;kernel=scale">its page</a> under the maintainer dashboard's Kernels tab.</p>
 <ol>
 <li>
 <p>Let's trace the scalar kernel first. Set <code>vectorized: CompileTime[bool] = False</code> in <a href="https://github.com/Xilinx/mlir-aie/blob/main/programming_examples/basic/vector_scalar_mul/vector_scalar_mul.py">vector_scalar_mul.py</a> and build the 32-bit version of the design with <code>make clean; make int_bit_width=32 trace</code>. The <code>int_bit_width</code> argument sets the data type and buffer sizes in both the design (<code>vector_scalar_mul.py</code>) and the host code (<code>test.cpp</code>). Open <code>trace_vector_scalar_mul.json</code> in https://ui.perfetto.dev and measure the time between <code>event 0</code> and <code>event 1</code>. In the Perfetto waveform, 1 us is one clock cycle. How many cycles did you measure?
@@ -4489,8 +4580,8 @@ Accumulators are wider than the vector registers so that sums of products keep t
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>python<span class="w"> </span>-m<span class="w"> </span>aie.utils.compile.remarks<span class="w"> </span>--target<span class="w"> </span>aie2p<span class="w"> </span>--only<span class="w"> </span>scale<span class="w"> </span>--out<span class="w"> </span>scale.json<span class="w"> </span>--meta<span class="w"> </span>scale_meta.json
 </code></pre></div>
 <code>scale.json</code> is a list of rows in the benchmark-chart format. Each loop gets one row, whose <code>name</code> is <code>&lt;kernel&gt;/loop/&lt;function&gt;/&lt;block&gt;/II</code>, whose <code>value</code> is the II, and whose <code>range</code> holds the rest of the schedule:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;scale/loop/vector_scalar_mul_vector/for.body.i/II&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cycles&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w"> </span><span class="nt">&quot;range&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NS=5 pro=23 epi=20 zol=True via=postpipeliner at vector.hpp:1105&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"scale/loop/vector_scalar_mul_vector/for.body.i/II"</span><span class="p">,</span><span class="w"> </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cycles"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w"> </span><span class="nt">"range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NS=5 pro=23 epi=20 zol=True via=postpipeliner at vector.hpp:1105"</span><span class="p">}</span>
 </code></pre></div>
 Read it as: II 5, 5 stages, a 23-bundle prologue and a 20-bundle epilogue, a zero-overhead loop, placed by Peano's post-pass pipeliner, attributed to line 1105 of an AIE API header (the loop was inlined from there). Per-kernel rows follow the same pattern: <code>scale/unpipelined_loops</code>, <code>scale/non_zol_loops</code>, <code>scale/pm_bytes</code> (program memory) and <code>scale/pass_failed_warnings</code> (loop pragmas the compiler could not apply). <code>scale_meta.json</code> holds the same data as one record per loop, with <code>ii</code>, <code>ns</code>, <code>prologue_bundles</code>, <code>epilogue_bundles</code>, <code>zol</code>, <code>pipelined</code>, <code>bundle_count</code>, <code>file</code> and <code>line</code>, plus the scheduler's notes per kernel. Use <code>--target aie2</code> for AIE2. The tool builds the <code>scale</code> kernel for 32-bit data only. See <a href="../../kernels_library/#static-checks">kernels_library.md</a> for the rest of its output, and <a href="../section-4d#reading-the-static-report">section 4d</a> for how to use it when optimizing.</p>
 <h3 id="reading-the-schedule-disassembly"><u>Reading the schedule: disassembly</u><a class="headerlink" href="#reading-the-schedule-disassembly" title="Permanent link">&para;</a></h3>
@@ -4944,7 +5035,7 @@ About 256 cycles on npu2 (8 bytes per cycle). The 32-bit design moves 4 KiB per 
     
     
     
-    <a href="mailto:aup@amd.com" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
+    <a href="https://www.amd.com/en/corporate/university-program.html" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
     </a>
   
@@ -4963,10 +5054,10 @@ About 256 cycles on npu2 (8 bytes per cycle). The 32-bit design moves 4 KiB per 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

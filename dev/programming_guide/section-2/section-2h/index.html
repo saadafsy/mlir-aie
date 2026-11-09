@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.svg">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -1847,10 +1847,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#direct-aie-stream-objectfifo-aie_streamend-port" class="md-nav__link">
+  <a href="#direct-aie-stream-end-portportstreamn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Direct AIE-stream ObjectFifo: aie_stream=(end, port)
+        Direct AIE-stream end: port=Port.stream(n)
       
     </span>
   </a>
@@ -2504,6 +2504,8 @@
       
         
       
+        
+      
     
     
     
@@ -2649,6 +2651,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../skills/aie-iron-design/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 3: IRON Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../skills/aie-hw-bringup/SKILL/" class="md-nav__link">
         
   
@@ -2656,7 +2686,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 3: HW Bring-up
+    Phase 4: HW Bring-up
   
 
     
@@ -2684,7 +2714,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Kernel Optimization
+    Phase 5: Kernel Optimization
   
 
     
@@ -2712,7 +2742,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Dataflow Optimization
+    Phase 5: Dataflow Optimization
   
 
     
@@ -2814,6 +2844,8 @@
   
     
     
+      
+        
       
         
       
@@ -2943,6 +2975,34 @@
     
   
     Tensor Access Patterns (taplib)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operators and declarations
   
 
     
@@ -3402,6 +3462,8 @@
       
         
       
+        
+      
     
     
     
@@ -3490,6 +3552,34 @@
     
   
     Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://xilinx.github.io/mlir-aie/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer Dashboard
   
 
     
@@ -3604,10 +3694,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#direct-aie-stream-objectfifo-aie_streamend-port" class="md-nav__link">
+  <a href="#direct-aie-stream-end-portportstreamn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Direct AIE-stream ObjectFifo: aie_stream=(end, port)
+        Direct AIE-stream end: port=Port.stream(n)
       
     </span>
   </a>
@@ -3750,7 +3840,7 @@ enforces this).</p>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">wts</span> <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">prod_ty</span><span class="p">,</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">depth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;wts&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">"wts"</span><span class="p">,</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">consumer_obj_type</span><span class="o">=</span><span class="n">cons_ty</span><span class="p">,</span>    <span class="c1"># 4:1 ratio — one prod fill, four cons acquires</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">)</span>
 </code></pre></div>
@@ -3772,20 +3862,20 @@ separate fifos and a join.</p>
   — production use feeding the MobileNet FC tiles a different chunk size
   than the upstream weight stream produces.</li>
 </ul>
-<h2 id="direct-aie-stream-objectfifo-aie_streamend-port"><u>Direct AIE-stream <code>ObjectFifo</code>: <code>aie_stream=(end, port)</code></u><a class="headerlink" href="#direct-aie-stream-objectfifo-aie_streamend-port" title="Permanent link">&para;</a></h2>
-<p><code>aie_stream=(end, port)</code> marks the fifo as a <em>direct AIE-stream</em>
-connection — the underlying <code>aie.objectfifo</code> op gets the <code>aie_stream</code> /
-<code>aie_stream_port</code> attributes stamped on it, telling the lowering to
-treat the producer side as wire-only.  No L1 buffer is allocated; the
-consumer reads straight off the stream.</p>
+<h2 id="direct-aie-stream-end-portportstreamn"><u>Direct AIE-stream end: <code>port=Port.stream(n)</code></u><a class="headerlink" href="#direct-aie-stream-end-portportstreamn" title="Permanent link">&para;</a></h2>
+<p><code>prod(port=Port.stream(n))</code> or <code>cons(port=Port.stream(n))</code> wires that end
+of the fifo to the core's stream port <code>n</code> instead of a DMA channel. The
+underlying <code>aie.objectfifo</code> op gets <code>prod_port = #aie.end_port&lt;Core : n&gt;</code>
+or <code>cons_ports = [#aie.end_port&lt;Core : n&gt;]</code>, telling the lowering to treat
+that end as wire-only. No L1 buffer is allocated there; the other end reads
+or writes straight off the stream.</p>
 <p>Pair it with kernels that emit per-element via <code>put_ms()</code> instead of
 acquire/release:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">of_dout_L1L3</span> <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">dout_ty</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;of_dout_L1L3&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">aie_stream</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>            <span class="c1"># (end, port) — wire-only producer side</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">of_dout_L1L3</span> <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span><span class="n">dout_ty</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"of_dout_L1L3"</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">(</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">core_body</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">fn_args</span><span class="o">=</span><span class="p">[</span><span class="n">of_din_L2L1</span><span class="o">.</span><span class="n">cons</span><span class="p">(),</span> <span class="n">of_dout_L1L3</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="n">Port</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span> <span class="o">...</span><span class="p">],</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">)</span>
 </code></pre></div>
 <p>The kernel's C++ body owns the writes (<code>aie::stream::put_ms(value)</code>)
 and the core body never acquires or releases the producer handle:</p>
@@ -3797,7 +3887,7 @@ and the core body never acquires or releases the producer handle:</p>
 </code></pre></div>
 <p>Lowered MLIR (extract from <code>magika/group2.py --emit-mlir</code>):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>aie.objectfifo @of_dout_L1L3(%logical_core, {%logical_shim_noc}, 2 : i32)
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    {aie_stream = 0 : i32, aie_stream_port = 0 : i32}
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    {prod_port = #aie.end_port&lt;Core : 0&gt;}
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    : !aie.objectfifo&lt;memref&lt;214xi32&gt;&gt;
 </code></pre></div>
 <p>Canonical demo:
@@ -3817,13 +3907,13 @@ neighbor's L1.</p>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">tile</span><span class="o">=</span><span class="n">west_tile</span><span class="p">,</span>                      <span class="c1"># pinned to neighbor, not compute_tile</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="nb">type</span><span class="o">=</span><span class="n">lut_ty</span><span class="p">,</span>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">initial_value</span><span class="o">=</span><span class="n">lut_data</span><span class="p">,</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;lut&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">"lut"</span><span class="p">,</span>
 <a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">)</span>
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">(</span>
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">body</span><span class="p">,</span>
 <a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">fn_args</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">lut_buf</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>         <span class="c1"># cross-tile Buffer reaches the kernel</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">tile</span><span class="o">=</span><span class="n">compute_tile</span><span class="p">,</span>                   <span class="c1"># different tile — that&#39;s the point</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">tile</span><span class="o">=</span><span class="n">compute_tile</span><span class="p">,</span>                   <span class="c1"># different tile — that's the point</span>
 <a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="p">)</span>
 </code></pre></div>
 <p>The convenience path is unchanged: a <code>Buffer</code> with no <code>tile=</code> set
@@ -3950,7 +4040,7 @@ four without DMA round-trips.</p>
     
     
     
-    <a href="mailto:aup@amd.com" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
+    <a href="https://www.amd.com/en/corporate/university-program.html" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
     </a>
   
@@ -3969,10 +4059,10 @@ four without DMA round-trips.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

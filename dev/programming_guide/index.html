@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.svg">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -2422,6 +2422,8 @@
       
         
       
+        
+      
     
     
     
@@ -2567,6 +2569,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../skills/aie-iron-design/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 3: IRON Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../skills/aie-hw-bringup/SKILL/" class="md-nav__link">
         
   
@@ -2574,7 +2604,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 3: HW Bring-up
+    Phase 4: HW Bring-up
   
 
     
@@ -2602,7 +2632,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Kernel Optimization
+    Phase 5: Kernel Optimization
   
 
     
@@ -2630,7 +2660,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Dataflow Optimization
+    Phase 5: Dataflow Optimization
   
 
     
@@ -2732,6 +2762,8 @@
   
     
     
+      
+        
       
         
       
@@ -2861,6 +2893,34 @@
     
   
     Tensor Access Patterns (taplib)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operators and declarations
   
 
     
@@ -3320,6 +3380,8 @@
       
         
       
+        
+      
     
     
     
@@ -3408,6 +3470,34 @@
     
   
     Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://xilinx.github.io/mlir-aie/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer Dashboard
   
 
     
@@ -3738,8 +3828,8 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nd">@iron</span><span class="o">.</span><span class="n">jit</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">my_design</span><span class="p">(</span><span class="n">a_in</span><span class="p">:</span> <span class="n">In</span><span class="p">,</span> <span class="n">b_out</span><span class="p">:</span> <span class="n">Out</span><span class="p">):</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">of_in</span>  <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[(</span><span class="mi">1024</span><span class="p">,),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;in&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">of_out</span> <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[(</span><span class="mi">1024</span><span class="p">,),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;out&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">of_in</span>  <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[(</span><span class="mi">1024</span><span class="p">,),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"in"</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">of_out</span> <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[(</span><span class="mi">1024</span><span class="p">,),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"out"</span><span class="p">)</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">core_fn</span><span class="p">(</span><span class="n">of_in</span><span class="p">,</span> <span class="n">of_out</span><span class="p">):</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="n">ai</span> <span class="o">=</span> <span class="n">of_in</span><span class="o">.</span><span class="n">acquire</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -3761,8 +3851,8 @@
 <a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
 <a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span class="k">return</span> <span class="n">Program</span><span class="p">(</span><span class="n">iron</span><span class="o">.</span><span class="n">get_current_device</span><span class="p">(),</span> <span class="n">rt</span><span class="p">,</span> <span class="n">workers</span><span class="o">=</span><span class="p">[</span><span class="n">w</span><span class="p">])</span><span class="o">.</span><span class="n">resolve_program</span><span class="p">()</span>
 <a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="n">a</span> <span class="o">=</span> <span class="n">iron</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">&quot;npu&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="n">b</span> <span class="o">=</span> <span class="n">iron</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span>  <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">&quot;npu&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="n">a</span> <span class="o">=</span> <span class="n">iron</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">"npu"</span><span class="p">)</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="n">b</span> <span class="o">=</span> <span class="n">iron</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span>  <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">"npu"</span><span class="p">)</span>
 <a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="n">my_design</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>              <span class="c1"># compile + run + sync back</span>
 </code></pre></div>
 <p><code>my_design.as_mlir(a, b)</code> prints MLIR for the active target, binding an attached runtime target when one is available. <code>python3 my_design.py --dev npu --emit-mlir</code> emits an offline target without touching the NPU.</p>
@@ -3936,31 +4026,31 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../api/iron/#iron.worker.Worker"><strong>Worker</strong></a></td>
+<td><a href="../api/iron/#aie.iron.worker.Worker"><strong>Worker</strong></a></td>
 <td>The IRON object describing the code that runs on one compute tile. Prefer "Worker" over "process" or "task".</td>
 </tr>
 <tr>
-<td><a href="../api/iron/#iron.dataflow.objectfifo.ObjectFifo"><strong>ObjectFifo</strong></a></td>
+<td><a href="../api/iron/#aie.iron.dataflow.objectfifo.ObjectFifo"><strong>ObjectFifo</strong></a></td>
 <td>The synchronized streaming-data primitive between two endpoints (host↔tile or tile↔tile). Producers and consumers <code>acquire</code> / <code>release</code> its elements. Reserve "channel" for AXI stream channels.</td>
 </tr>
 <tr>
-<td><a href="../api/iron/#iron.dataflow.objectfifo.ObjectFifoHandle"><strong>ObjectFifoHandle</strong></a></td>
+<td><a href="../api/iron/#aie.iron.dataflow.objectfifo.ObjectFifoHandle"><strong>ObjectFifoHandle</strong></a></td>
 <td>A producer or consumer handle to an ObjectFifo, obtained via <code>of.prod()</code> / <code>of.cons()</code>. Worker core functions call <code>acquire</code> / <code>release</code> on it.</td>
 </tr>
 <tr>
-<td><a href="../api/iron/#iron.runtime.runtime.Runtime"><strong>Runtime</strong></a></td>
+<td><a href="../api/iron/#aie.iron.runtime.runtime.Runtime"><strong>Runtime</strong></a></td>
 <td>The host-side description of <code>fill</code> / <code>drain</code> operations, defined by the body passed to <code>Runtime(seq, fn_args)</code>. Workers are passed to <code>Program(workers=...)</code>. Distinct from "host code" (the C++/Python testbench that calls the design).</td>
 </tr>
 <tr>
-<td><a href="../api/iron/#iron.program.Program"><strong>Program</strong></a></td>
+<td><a href="../api/iron/#aie.iron.program.Program"><strong>Program</strong></a></td>
 <td>The top-level container that binds a device and a Runtime and resolves the design to MLIR.</td>
 </tr>
 <tr>
-<td><a href="../api/iron/#iron.buffer.Buffer"><strong>Buffer</strong></a></td>
+<td><a href="../api/iron/#aie.iron.buffer.Buffer"><strong>Buffer</strong></a></td>
 <td>A named memory region on a tile, used for Worker-local scratch storage or runtime parameters. Prefer it over a self-connected ObjectFifo when sequential kernel calls in one Worker share an intermediate result; use ObjectFifos when producer/consumer synchronization is needed.</td>
 </tr>
 <tr>
-<td><a href="../api/iron/#iron.kernel.Kernel"><strong>Kernel</strong></a> / <a href="../api/iron/#iron.kernel.ExternalFunction"><strong>ExternalFunction</strong></a></td>
+<td><a href="../api/iron/#aie.iron.kernel.Kernel"><strong>Kernel</strong></a> / <a href="../api/iron/#aie.iron.kernel.ExternalFunction"><strong>ExternalFunction</strong></a></td>
 <td>Wrappers for AIE core functions: <code>Kernel</code> for a pre-compiled object file, <code>ExternalFunction</code> for C/C++ source compiled at JIT time.</td>
 </tr>
 <tr>
@@ -3968,15 +4058,15 @@
 <td>A description of how a tensor is sliced and streamed to/from the NPU across multiple DMA transfers. Passed as <code>tap=</code> to <code>fifo.fill()</code> / <code>fifo.drain()</code>.</td>
 </tr>
 <tr>
-<td><a href="../api/iron/#iron.dataflow.flow.Flow"><strong>Flow</strong></a> / <a href="../api/iron/#iron.dataflow.flow.PacketFlow"><strong>PacketFlow</strong></a></td>
+<td><a href="../api/iron/#aie.iron.dataflow.flow.Flow"><strong>Flow</strong></a> / <a href="../api/iron/#aie.iron.dataflow.flow.PacketFlow"><strong>PacketFlow</strong></a></td>
 <td>Lower-level explicit-routing primitives: <code>Flow</code> for circuit-switched routes, <code>PacketFlow</code> for packet-switched routes with caller-controlled packet IDs.</td>
 </tr>
 <tr>
-<td><a href="../api/iron/#iron.dataflow.tile_dma.TileDma"><strong>TileDma</strong></a></td>
+<td><a href="../api/iron/#aie.iron.dataflow.tile_dma.TileDma"><strong>TileDma</strong></a></td>
 <td>A lower-level explicit per-tile DMA program, used when the ObjectFifo abstraction hides too much.</td>
 </tr>
 <tr>
-<td><a href="../api/iron/#iron.runtime.runtime.Runtime"><strong>Runtime sequence</strong></a></td>
+<td><a href="../api/iron/#aie.iron.runtime.runtime.Runtime"><strong>Runtime sequence</strong></a></td>
 <td>The sequence body passed to <code>Runtime(seq, fn_args)</code> in which <code>fill</code> / <code>drain</code> operations are declared.</td>
 </tr>
 </tbody>
@@ -4067,10 +4157,10 @@
 <h2 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
 <ul>
 <li>E. Hunhoff, J. Melber, K. Denolf, A. Bisca, S. Bayliss, S. Neuendorffer, J. Fifield, J. Lo, P. Vasireddy, P. James-Roxby, E. Keller. "<a href="https://arxiv.org/abs/2504.18430">Efficiency, Expressivity, and Extensibility in a Close-to-Metal NPU Programming Interface</a>". In 33rd IEEE International Symposium On Field-Programmable Custom Computing Machines, May 2025. — the IRON paper.</li>
-<li><a href="https://ieeexplore.ieee.org/document/10592049">AMD XDNA™ NPU in Ryzen™ AI Processors</a> — IEEE Hot Chips paper.</li>
+<li><a href="https://ieeexplore.ieee.org/document/10592049">AMD XDNA™ NPU in Ryzen™ AI Processors</a> — IEEE Micro paper (Special Issue on Contemporary Industry Products, vol. 44, no. 6, 2024).</li>
 <li>AIE architecture manuals: <a href="https://docs.amd.com/r/en-US/am009-versal-ai-engine/Overview">AIE1 — AM009</a>, <a href="https://docs.amd.com/r/en-US/am020-versal-aie-ml/Overview">AIE2 — AM020</a>.</li>
 <li>AIE register references: <a href="https://docs.amd.com/r/en-US/am015-versal-aie-register-reference/Overview">AIE1 — AM015</a>, <a href="https://docs.amd.com/r/en-US/am025-versal-aie-ml-register-reference/Overview">AIE2 — AM025</a>.</li>
-<li><a href="https://www.xilinx.com/htmldocs/xilinx2023_2/aiengine_api/aie_api/doc/index.html">AIE API User Guide</a> — the C++ header-only vector library for kernel code.</li>
+<li><a href="https://xilinx.github.io/aie_api/topics.html">AIE API User Guide</a> — the C++ header-only vector library for kernel code.</li>
 <li><a href="https://docs.amd.com/r/en-US/ug1076-ai-engine-environment/Documentation">Summary documentation links (UG1076)</a>.</li>
 </ul>
 <hr />
@@ -4186,7 +4276,7 @@
     
     
     
-    <a href="mailto:aup@amd.com" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
+    <a href="https://www.amd.com/en/corporate/university-program.html" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
     </a>
   
@@ -4205,10 +4295,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

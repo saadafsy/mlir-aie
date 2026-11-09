@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Make one compiled AIE kernel faster, and prove it. For C++ kernels built by Peano (llvm-aie) for AIE2P (npu2) or AIE2 (npu1) in bf16, float, int8 or int16, from elementwise and normalization kernels to matmul, GEMV, attention and conv, in aie_kernels/ or the user's own .cc. Use when a loop has a high II, won't pipeline, spills, overflows its stack or calls __mulsf3, __divsi3 or another libcall; when the user wants to vectorize or restructure a kernel, or port one architecture's tuned code to the other; or when they want to know whether a kernel change is really faster or bit-identical on the NPU. Drives the aie.utils.compile.remarks static report and its base-arm diff, the kernel_design contract gate and traced cycles per call, and, for library kernels, the test_kernels_e2e gate and the test_kernels_perf back-to-back A/B. Carries the levers that measured faster on hardware and the traps that compile cleanly and run wrong. Not for tile placement or DMA bandwidth (aie-dataflow-opt), or for writing a first kernel (aie-code-creator).">
+        <meta name="description" content="Make one compiled AIE kernel faster, and prove it. For C++ kernels built by Peano (llvm-aie) for AIE2P (npu2) or AIE2 (npu1) in bf16, float, int8 or int16, from elementwise and normalization kernels to matmul, GEMV, attention and conv, in aie_kernels/ or the user's own .cc. Use when a loop has a high II, won't pipeline, spills, overflows its stack or calls __mulsf3, __divsi3 or another libcall; when the user wants to vectorize or restructure a kernel, or port one architecture's tuned code to the other; or when they want to know whether a kernel change is really faster or bit-identical on the NPU. Drives the aie.utils.compile.remarks static report and its base-arm diff, the kernel_design contract gate and traced cycles per call, and, for library kernels, the test_kernels_e2e gate and the test_kernels_perf back-to-back A/B. Carries the levers that measured faster on hardware and the traps that compile cleanly and run wrong. Not for tile placement or DMA bandwidth (aie-dataflow-opt), or for writing a first kernel (aie-iron-design).">
       
       
         <meta name="author" content="AMD Advanced Micro Devices">
@@ -25,18 +25,18 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.svg">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
-        <title>Phase 4: Kernel Optimization - IRON / MLIR-AIE</title>
+        <title>Phase 5: Kernel Optimization - IRON / MLIR-AIE</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Phase 4: Kernel Optimization
+              Phase 5: Kernel Optimization
             
           </span>
         </div>
@@ -2410,6 +2410,8 @@
       
         
       
+        
+      
     
     
     
@@ -2558,6 +2560,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../aie-iron-design/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 3: IRON Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../aie-hw-bringup/SKILL/" class="md-nav__link">
         
   
@@ -2565,7 +2595,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 3: HW Bring-up
+    Phase 4: HW Bring-up
   
 
     
@@ -2602,7 +2632,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Kernel Optimization
+    Phase 5: Kernel Optimization
   
 
     
@@ -2620,7 +2650,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Kernel Optimization
+    Phase 5: Kernel Optimization
   
 
     
@@ -2856,7 +2886,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Dataflow Optimization
+    Phase 5: Dataflow Optimization
   
 
     
@@ -2958,6 +2988,8 @@
   
     
     
+      
+        
       
         
       
@@ -3087,6 +3119,34 @@
     
   
     Tensor Access Patterns (taplib)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operators and declarations
   
 
     
@@ -3546,6 +3606,8 @@
       
         
       
+        
+      
     
     
     
@@ -3634,6 +3696,34 @@
     
   
     Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://xilinx.github.io/mlir-aie/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer Dashboard
   
 
     
@@ -3998,6 +4088,11 @@ SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 -->
 
 <h1 id="aie-kernel-optimization">AIE kernel optimization<a class="headerlink" href="#aie-kernel-optimization" title="Permanent link">&para;</a></h1>
+<p>Fifth of five porting phases, alongside <code>aie-dataflow-opt</code> (see
+<code>aie-model-baseline</code> for phase 1, <code>aie-dataflow-presim</code> for phase 2,
+<code>aie-iron-design</code> for phase 3, and <code>aie-hw-bringup</code> for phase 4, getting
+to a correct baseline on real hardware — this phase assumes that baseline
+already exists and is correct).</p>
 <p>This skill makes <strong>one compiled kernel</strong> faster. It assumes the kernel is
 already correct on hardware (<code>aie-hw-bringup</code>) and worth the work
 (<code>aie-dataflow-opt</code> ranks kernels by ablation).</p>
@@ -4013,7 +4108,7 @@ the shapes (51d0a8e000a).</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">source</span><span class="w"> </span>/opt/xilinx/xrt/setup.sh<span class="w">            </span><span class="c1"># XRT first, or pyxrt is missing</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">source</span><span class="w"> </span>&lt;venv&gt;/bin/activate
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">source</span><span class="w"> </span>utils/env_setup.sh<span class="w"> </span>install<span class="w">          </span><span class="c1"># from the repository root (docs/Building.md)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MLIR_AIE_KERNEL_SOURCES</span><span class="o">=</span><span class="nv">$PWD</span><span class="w">        </span><span class="c1"># else &quot;this tree&quot; is build/include&#39;s stale copy</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MLIR_AIE_KERNEL_SOURCES</span><span class="o">=</span><span class="nv">$PWD</span><span class="w">        </span><span class="c1"># else "this tree" is build/include's stale copy</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">W</span><span class="o">=</span><span class="k">$(</span>mktemp<span class="w"> </span>-d<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="nv">K</span><span class="o">=</span>&lt;factory&gt;<span class="p">;</span><span class="w"> </span><span class="nv">CASE</span><span class="o">=</span>&lt;<span class="k">case</span><span class="w"> </span>name<span class="w"> </span>from<span class="w"> </span>kernel_cases.py&gt;<span class="p">;</span><span class="w"> </span><span class="nv">CPUS</span><span class="o">=</span>&lt;fixed<span class="w"> </span>host<span class="w"> </span>CPU<span class="w"> </span>list&gt;
 </code></pre></div>
 <p>Remarks takes <code>--target aie2p</code> for npu2 (Strix, Krackan) or <code>--target aie2</code>
@@ -4045,12 +4140,12 @@ the same for a kernel in your own design; only the drivers change:</p>
 <tr>
 <td>Gate (2)</td>
 <td><code>test_kernels_e2e.py -m extensive</code></td>
-<td>Attach a <code>KernelContract</code> (<code>aie.iron.kernels</code>: roles, a single-pass reference, tolerance, <code>trace=</code>) and drive it with <code>aie.iron.algorithms.kernel_design</code> (<code>kd.design(my_factory, calls=N, guard=True)</code> with <code>my_factory</code> a module-level function returning the kernel, <code>kd.sample_inputs</code>, <code>kd.upload(..., poison=True)</code>), or keep your design's own test with poisoned outputs</td>
+<td>Attach a <code>KernelContract</code> (<code>aie.iron.kernels</code>: roles, a single-pass reference, tolerance, <code>trace=</code>) and drive it with <code>aie.iron.algorithms.KernelDesign</code> (<code>kd = KernelDesign(my_kernel, calls=N, guard=True)</code>, then <code>kd.run(kd.sample_inputs())</code> and <code>kd.check</code>), or keep your design's own test with poisoned outputs</td>
 </tr>
 <tr>
 <td>Measure (6)</td>
 <td><code>test_kernels_perf.py --baseline-sources</code></td>
-<td><code>kd.cycles_per_call</code> on each arm's design for a <code>Trace.whole_call()</code> contract, or <code>event0()</code>/<code>event1()</code> markers around the call in your design traced with <code>TraceConfig</code>; alternate the arms back to back</td>
+<td><code>kd.cycles_per_call</code> on each arm's <code>KernelDesign</code> for a <code>Trace.whole_call()</code> contract, or <code>event0()</code>/<code>event1()</code> markers around the call in your design traced with <code>TraceConfig</code>; alternate the arms back to back</td>
 </tr>
 <tr>
 <td>Whole design</td>
@@ -4065,10 +4160,10 @@ requirements; the short hashes cite the mlir-aie commits that measured them
 (<code>git fetch origin pull/3807/head</code> brings them in after the squash merge).</p>
 <h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
 <h3 id="1-resolve-what-runs">1. Resolve what runs<a class="headerlink" href="#1-resolve-what-runs" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;def </span><span class="nv">$K</span><span class="s2">\b&quot;</span><span class="w"> </span>-A40<span class="w"> </span>python/iron/kernels/*.py<span class="w">      </span><span class="c1"># source, -D flags, extern &quot;C&quot; symbol, trace=</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;Case(\&quot;</span><span class="nv">$K</span><span class="s2">&quot;</span><span class="w"> </span>test/python/npu/kernel_cases.py<span class="w">     </span><span class="c1"># cases, calls=, kwargs</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">"def </span><span class="nv">$K</span><span class="s2">\b"</span><span class="w"> </span>-A40<span class="w"> </span>python/iron/kernels/*.py<span class="w">      </span><span class="c1"># source, -D flags, extern "C" symbol, trace=</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">"Case(\"</span><span class="nv">$K</span><span class="s2">"</span><span class="w"> </span>test/python/npu/kernel_cases.py<span class="w">     </span><span class="c1"># cases, calls=, kwargs</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>python<span class="w"> </span>-m<span class="w"> </span>aie.utils.compile.remarks<span class="w"> </span>--target<span class="w"> </span>aie2p<span class="w"> </span>--cases<span class="w"> </span>test/python/npu/kernel_cases.py<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--only<span class="w"> </span><span class="s2">&quot;^</span><span class="nv">$K</span><span class="s2">&quot;</span><span class="w"> </span>--out<span class="w"> </span><span class="nv">$W</span>/rows.json<span class="w"> </span>--meta<span class="w"> </span><span class="nv">$W</span>/meta.json
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--only<span class="w"> </span><span class="s2">"^</span><span class="nv">$K</span><span class="s2">"</span><span class="w"> </span>--out<span class="w"> </span><span class="nv">$W</span>/rows.json<span class="w"> </span>--meta<span class="w"> </span><span class="nv">$W</span>/meta.json
 </code></pre></div>
 <ul>
 <li>Remarks prints <code>[OK] &lt;build&gt;: &lt;symbol&gt; from &lt;source&gt;</code> per build. Follow
@@ -4077,7 +4172,7 @@ requirements; the short hashes cite the mlir-aie commits that measured them
 <li><code>--cases</code> compiles exactly the builds the cases run, named by case
   (4c8c4d91ff4); it first prints <code>cases: N builds for M cases ...</code>, and a
   case missing from M is a finding. Without it remarks builds only factory
-  defaults and <code>.dtypes</code>, which missed every stride-2 and sized <code>-D</code> build
+  defaults and <code>kernels.DTYPES</code>, which missed every stride-2 and sized <code>-D</code> build
   of the conv kernels. For a shape no case has, use
   <code>--build FACTORY:KEY=VALUE,...</code> (repeatable; 3dfa82d81af).</li>
 <li>Read the contract's <code>trace=</code>. Only <code>Trace.whole_call()</code> gets a cycles row.
@@ -4097,8 +4192,8 @@ requirements; the short hashes cite the mlir-aie commits that measured them
   not a DMA stall.</li>
 </ul>
 <h3 id="2-gate-and-prove-the-gate">2. Gate, and prove the gate<a class="headerlink" href="#2-gate-and-prove-the-gate" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pytest<span class="w"> </span>test/python/test_kernel_contracts.py<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$K</span><span class="s2">&quot;</span><span class="w"> </span>-q<span class="w">           </span><span class="c1"># host only</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>pytest<span class="w"> </span>test/python/npu/test_kernels_e2e.py<span class="w"> </span>-m<span class="w"> </span>extensive<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CASE</span><span class="s2">&quot;</span><span class="w"> </span>--seeds<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pytest<span class="w"> </span>test/python/test_kernel_contracts.py<span class="w"> </span>-k<span class="w"> </span><span class="s2">"</span><span class="nv">$K</span><span class="s2">"</span><span class="w"> </span>-q<span class="w">           </span><span class="c1"># host only</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>pytest<span class="w"> </span>test/python/npu/test_kernels_e2e.py<span class="w"> </span>-m<span class="w"> </span>extensive<span class="w"> </span>-k<span class="w"> </span><span class="s2">"</span><span class="nv">$CASE</span><span class="s2">"</span><span class="w"> </span>--seeds<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--report-error<span class="w"> </span><span class="nv">$W</span>/err.json<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$W</span>/gate.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 </code></pre></div>
 <ul>
@@ -4135,8 +4230,8 @@ requirements; the short hashes cite the mlir-aie commits that measured them
   arg_byte_offsets=((idx, 16),))</code> (c7d229b9316), and run it on the base
   kernels first so it fails. Declare <code>alignments</code> in the contract for
   what the fast path loads (d8e877d26fc).</li>
-<li>Keep outputs poisoned (<code>kd.upload(..., poison=True)</code>; the core's output
-  tile is poisoned too, 36bd3b637a7) and guarded (<code>kd.design(...,
+<li>Keep outputs poisoned (<code>kd.run</code> poisons them; the core's output tile is
+  poisoned too, 36bd3b637a7) and guarded (<code>KernelDesign(...,
   guard=True)</code>), so an unwritten output or a write past a tile's end fails.
   Gate every entry point alone, and the composition once.</li>
 </ul>
@@ -4157,7 +4252,7 @@ branch an older archive lacks others' later commits and credits their gains
 to you.</p>
 <h3 id="4-read-the-static-report">4. Read the static report<a class="headerlink" href="#4-read-the-static-report" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>-m<span class="w"> </span>aie.utils.compile.remarks<span class="w"> </span>--target<span class="w"> </span>aie2p<span class="w"> </span>--cases<span class="w"> </span>test/python/npu/kernel_cases.py<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>--only<span class="w"> </span><span class="s2">&quot;^</span><span class="nv">$CASE</span><span class="s2">&quot;</span><span class="w"> </span>--out<span class="w"> </span><span class="nv">$W</span>/rows.json<span class="w"> </span>--meta<span class="w"> </span><span class="nv">$W</span>/meta.json<span class="w"> </span>--keep<span class="w"> </span><span class="nv">$W</span>/objs<span class="w"> </span>--baseline-sources<span class="w"> </span><span class="nv">$BASE</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>--only<span class="w"> </span><span class="s2">"^</span><span class="nv">$CASE</span><span class="s2">"</span><span class="w"> </span>--out<span class="w"> </span><span class="nv">$W</span>/rows.json<span class="w"> </span>--meta<span class="w"> </span><span class="nv">$W</span>/meta.json<span class="w"> </span>--keep<span class="w"> </span><span class="nv">$W</span>/objs<span class="w"> </span>--baseline-sources<span class="w"> </span><span class="nv">$BASE</span>
 </code></pre></div>
 <ul>
 <li>Per build: <code>[OK]</code>, then any <code>dropped pragma:</code>, <code>calls the runtime
@@ -4196,7 +4291,7 @@ to you.</p>
   <code>-debug-only=postpipeliner</code> for ResMII/RecMII, or <code>-mllvm -debug</code>
   grepped for <code>^PLI</code> for each rejected II's reason.</li>
 <li>Spills: <code>[sp, #</code> inside a loop body in the kept object.
-  <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$PEANO_INSTALL_DIR</span>/bin/llvm-objdump<span class="w"> </span>-d<span class="w"> </span>--no-show-raw-insn<span class="w"> </span>&lt;object&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;\[sp, #&#39;</span>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$PEANO_INSTALL_DIR</span>/bin/llvm-objdump<span class="w"> </span>-d<span class="w"> </span>--no-show-raw-insn<span class="w"> </span>&lt;object&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-c<span class="w"> </span><span class="s1">'\[sp, #'</span>
 </code></pre></div></li>
 <li>Size: use <code>pm_bytes</code> / <code>pm_bytes_by_function</code>, not an object's <code>.text</code>,
   which counts siblings the link drops.</li>
@@ -4362,16 +4457,18 @@ to you.</p>
 <li>Re-run <code>test_kernel_contracts.py</code> and the gate.</li>
 </ul>
 <h3 id="6-measure-both-arms-back-to-back">6. Measure both arms back to back<a class="headerlink" href="#6-measure-both-arms-back-to-back" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>taskset<span class="w"> </span>-c<span class="w"> </span><span class="nv">$CPUS</span><span class="w"> </span>pytest<span class="w"> </span>test/python/npu/test_kernels_perf.py<span class="w"> </span>-m<span class="w"> </span>perf<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$K</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>taskset<span class="w"> </span>-c<span class="w"> </span><span class="nv">$CPUS</span><span class="w"> </span>pytest<span class="w"> </span>test/python/npu/test_kernels_perf.py<span class="w"> </span>-m<span class="w"> </span>perf<span class="w"> </span>-k<span class="w"> </span><span class="s2">"</span><span class="nv">$K</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span>--baseline-sources<span class="w"> </span><span class="nv">$BASE</span><span class="w"> </span>--perf-out<span class="w"> </span><span class="nv">$W</span>/perf.json<span class="w"> </span>--perf-meta<span class="w"> </span><span class="nv">$W</span>/meta.json
 </code></pre></div>
 <ul>
 <li>Each case runs from this tree, then from <code>$BASE</code>, with the same inputs.
   The summary prints <code>cycles base -&gt; cur</code> and each arm's <code>min..max n=</code> for
-  cycles and <code>npu_us</code>, <code>same</code> or <code>N differ</code> raw output words, and each
-  arm's error vs the reference (3b507540694, 8f749a06d52). <code>--perf-meta</code>
-  holds the same under <code>baseline.cases.&lt;case&gt;</code> (<code>cycles_range</code>,
-  <code>npu_us_range</code>, <code>accuracy</code> as [base, cur]).</li>
+  cycles, <code>dispatch_us</code> and <code>npu_us</code>, <code>same</code> or <code>N differ</code> raw output
+  words, and each arm's error vs the reference (3b507540694, 8f749a06d52).
+  <code>--perf-meta</code> holds the same under <code>baseline.cases.&lt;case&gt;</code>
+  (<code>cycles_range</code>, <code>dispatch_us_range</code>, <code>npu_us_range</code>, <code>accuracy</code> as
+  [base, cur]). <code>dispatch_us</code> is submit to completion; <code>npu_us</code> is that less
+  the median of an empty dispatch on the same hardware context.</li>
 <li><strong>Time every case of the kernel</strong>, not the one you targeted. Every case
   is one command, and a change often wins one shape and loses another: 8
   pixels per mmul won six bn 1x1 shapes and lost relu 28/40/120 2236 →
@@ -4450,6 +4547,9 @@ measured 78 / 134); if they disagree, find out which is wrong first.</p>
   <code>$NPU_CACHE_HOME/objects/&lt;key&gt;/</code> holds a copy of every <code>.cc</code> it compiled
   (the <code>.o.d</code> depfiles name them), so diff those against <code>git show
   &lt;rev&gt;:&lt;path&gt;</code>. When two numbers conflict, compare digests first.</li>
+<li>The nightly kernel checks and their history are on the <a href="https://xilinx.github.io/mlir-aie/dashboard/#view=night">maintainer
+  dashboard</a>; the
+  numbers in this skill's case studies are dated evidence, not today's.</li>
 <li>Several agents on one NPU: wrap every hardware command in <code>flock</code> on one
   shared lock file, and build base arms by copying the live tree.</li>
 <li>Keep every <code>extern "C"</code> name, signature and buffer layout. Leave
@@ -4503,7 +4603,8 @@ or the test fails with <code>N of M calls traced</code> (53f84828939); intervals
   cycles; if production is dispatch-bound too, hand off to
   <code>aie-dataflow-opt</code>.</li>
 <li>Wall clock, only when the kernel can't be traced: quote the pinned
-  <strong>min</strong> (<code>npu_us_min</code>), never the mean (it showed 7.5% between
+  <strong>min</strong> (<code>npu_us_min</code>, or <code>dispatch_us_min</code> where the runtime has no
+  empty dispatch), never the mean (it showed 7.5% between
   byte-identical builds). For the per-call cost, difference two cases that
   differ only in <code>calls</code>: <code>(t20 − t4) / 16</code>.</li>
 <li>Ablation prices a region: replace it with a cheap wrong computation and
@@ -4888,7 +4989,7 @@ humans, with a worked <code>add</code> example).</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../aie-hw-bringup/SKILL/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Phase 3: HW Bring-up">
+          <a href="../../aie-hw-bringup/SKILL/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Phase 4: HW Bring-up">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4898,20 +4999,20 @@ humans, with a worked <code>add</code> example).</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Phase 3: HW Bring-up
+                Phase 4: HW Bring-up
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../aie-dataflow-opt/SKILL/" class="md-footer__link md-footer__link--next" aria-label="Next: Phase 4: Dataflow Optimization">
+          <a href="../../aie-dataflow-opt/SKILL/" class="md-footer__link md-footer__link--next" aria-label="Next: Phase 5: Dataflow Optimization">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Phase 4: Dataflow Optimization
+                Phase 5: Dataflow Optimization
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -4962,7 +5063,7 @@ humans, with a worked <code>add</code> example).</p>
     
     
     
-    <a href="mailto:aup@amd.com" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
+    <a href="https://www.amd.com/en/corporate/university-program.html" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
     </a>
   
@@ -4981,10 +5082,10 @@ humans, with a worked <code>add</code> example).</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

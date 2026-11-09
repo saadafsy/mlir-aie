@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.svg">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -2445,6 +2445,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#kernel-signatures-worth-checking-before-you-wire-one-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel signatures worth checking before you wire one up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shared-buffer-factory-kwargs" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2654,6 +2665,8 @@
       
         
       
+        
+      
     
     
     
@@ -2799,6 +2812,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../skills/aie-iron-design/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 3: IRON Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../skills/aie-hw-bringup/SKILL/" class="md-nav__link">
         
   
@@ -2806,7 +2847,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 3: HW Bring-up
+    Phase 4: HW Bring-up
   
 
     
@@ -2834,7 +2875,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Kernel Optimization
+    Phase 5: Kernel Optimization
   
 
     
@@ -2862,7 +2903,7 @@
   <span class="md-ellipsis">
     
   
-    Phase 4: Dataflow Optimization
+    Phase 5: Dataflow Optimization
   
 
     
@@ -2964,6 +3005,8 @@
   
     
     
+      
+        
       
         
       
@@ -3093,6 +3136,34 @@
     
   
     Tensor Access Patterns (taplib)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operators and declarations
   
 
     
@@ -3552,6 +3623,8 @@
       
         
       
+        
+      
     
     
     
@@ -3640,6 +3713,34 @@
     
   
     Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://xilinx.github.io/mlir-aie/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer Dashboard
   
 
     
@@ -3758,6 +3859,17 @@
     <span class="md-ellipsis">
       
         Compose kernels explicitly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-signatures-worth-checking-before-you-wire-one-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel signatures worth checking before you wire one up
       
     </span>
   </a>
@@ -4042,8 +4154,8 @@ no separate Makefile rule to keep in sync.</p>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nd">@iron</span><span class="o">.</span><span class="n">jit</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">passthrough_design</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">In</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Out</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">N</span><span class="p">:</span> <span class="n">CompileTime</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">line_ty</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[(</span><span class="n">N</span><span class="p">,),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">]]</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">of_in</span> <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span><span class="n">line_ty</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;in&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">of_out</span> <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span><span class="n">line_ty</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;out&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">of_in</span> <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span><span class="n">line_ty</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"in"</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">of_out</span> <span class="o">=</span> <span class="n">ObjectFifo</span><span class="p">(</span><span class="n">line_ty</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"out"</span><span class="p">)</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="c1"># One call → an ExternalFunction carrying source path + flags + arg list.</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">pt</span> <span class="o">=</span> <span class="n">kernels</span><span class="o">.</span><span class="n">passthrough</span><span class="p">(</span><span class="n">tile_size</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
@@ -4096,6 +4208,34 @@ blocking the matmul reads.
 Call it on the last K tile of a reduction whose length is not a multiple of
 <code>dim_k</code>: the matmul after it sums only the first <code>k_valid</code> of the tile's K,
 whatever the rest of the tile holds.</p>
+<h2 id="kernel-signatures-worth-checking-before-you-wire-one-up">Kernel signatures worth checking before you wire one up<a class="headerlink" href="#kernel-signatures-worth-checking-before-you-wire-one-up" title="Permanent link">&para;</a></h2>
+<p>The <code>ExternalFunction</code> a factory returns carries a concrete <code>arg_types</code> list, and a mismatch
+fails at MLIR verification with an argument-count error rather than at runtime. Three that
+surprise people:</p>
+<ul>
+<li><strong><code>kernels.scale</code></strong> is <code>(in_tile, out_tile, factor, n)</code> where <code>factor</code> is a <strong>1-element
+  buffer</strong> (<code>np.ndarray[(1,), np.dtype[np.int32]]</code>), not a plain Python scalar. Feed it from a
+  small <code>depth=1</code> ObjectFifo or a <code>Buffer</code> — the upside is the factor becomes settable per
+  launch without a rebuild.</li>
+<li><strong><code>kernels.add</code> / <code>kernels.mul</code></strong> on bf16 are bare <code>(in..., out)</code> with no trailing size. The
+  <code>aie.iron.algorithms</code> templates (<code>transform_parallel</code>, <code>transform_parallel_binary</code>, ...) append
+  <code>tile_size</code> as a trailing argument by default (<code>pass_size_to_kernel=True</code>); pass
+  <code>pass_size_to_kernel=False</code> for these two. <code>kernels.passthrough</code> and most other factories <em>do</em>
+  take a trailing size and want the default <code>True</code>.</li>
+<li><strong>The int8 <code>kernels.add</code></strong> ends with three <code>int32</code> shifts,
+  <code>(a, b, out, a_shift, b_shift, out_shift)</code>. <code>transform_binary</code> and
+  <code>transform_parallel_binary</code> take no <code>*params</code>, so they can't call it: build the
+  <code>ObjectFifo</code>/<code>Worker</code>/<code>Runtime</code> design by hand and pass the shifts as Python ints in the core
+  body, <code>add_k(a, b, c, 0, 0, 0)</code>. All-zero shifts give a plain saturating int8 add.</li>
+</ul>
+<p>When in doubt, ask the kernel. <code>arg_types</code> is a <strong>method</strong>, not a property — call it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">kernels</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span><span class="o">.</span><span class="n">arg_types</span><span class="p">()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">[</span><span class="n">ndarray</span><span class="p">[(</span><span class="mi">1024</span><span class="p">,),</span> <span class="n">int32</span><span class="p">],</span> <span class="n">ndarray</span><span class="p">[(</span><span class="mi">1024</span><span class="p">,),</span> <span class="n">int32</span><span class="p">],</span> <span class="n">ndarray</span><span class="p">[(</span><span class="mi">1</span><span class="p">,),</span> <span class="n">int32</span><span class="p">],</span> <span class="n">numpy</span><span class="o">.</span><span class="n">int32</span><span class="p">]</span>
+</code></pre></div>
+<p>Unsupported dtypes fail loudly at construction rather than producing a wrong kernel, e.g.
+<code>kernels.mul(tile_size=1024, dtype=np.int8)</code> raises
+<code>ValueError: mul() dtype must be bfloat16 ... Only the bf16 variant is available in the
+installed aie_kernels</code>. That's your signal to hand-write the kernel.</p>
 <h2 id="shared-buffer-factory-kwargs">Shared-buffer factory kwargs<a class="headerlink" href="#shared-buffer-factory-kwargs" title="Permanent link">&para;</a></h2>
 <p>Some convolution factories accept an opt-in kwarg that decouples the
 <em>buffer</em> size from the <em>call</em> size, so a design that splits the work
@@ -4124,11 +4264,6 @@ across multiple workers can share one weight tape between them:</p>
 <td>per-call weight tape chunk</td>
 <td>from full <code>input_channels * output_channels</code> tile (for cascade / output-split streaming)</td>
 </tr>
-<tr>
-<td><code>kernels.bn_fc_relu_ui16_pad(weight_chunk_count=)</code></td>
-<td>same as above for FC</td>
-<td>(used by the MobileNet V3 classifier head)</td>
-</tr>
 </tbody>
 </table>
 <p>Default behavior is unchanged — leave the kwarg unset and the
@@ -4146,23 +4281,27 @@ on each submodule's <code>__doc__</code>:</p>
 <tbody>
 <tr>
 <td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/eltwise.py"><code>kernels.eltwise</code></a></td>
-<td>element-wise: passthrough, scale, add, mul, mul_add, relu</td>
+<td>element-wise: passthrough, scale, add (bf16, or int8 on power-of-two scales), mul, mul_add, relu, clamp, magnitude_f32</td>
 </tr>
 <tr>
 <td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/reduce.py"><code>kernels.reduce</code></a></td>
-<td>reductions: reduce_add, reduce_min, reduce_max, compute_max</td>
+<td>reductions: reduce_add, reduce_min, reduce_max, compute_max, argmax, argmax_combine, maxpool2d</td>
 </tr>
 <tr>
 <td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/activation.py"><code>kernels.activation</code></a></td>
-<td>activations: softmax, tanh, sigmoid, gelu, silu, swiglu, leaky_relu, bf16_exp, exp2f_vec</td>
+<td>activations: softmax, tanh, sigmoid, gelu, gelu_erf, silu, swiglu, leaky_relu, bf16_exp, exp2f_vec, log_f32, log10_clamp_f32</td>
 </tr>
 <tr>
 <td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/datamovement.py"><code>kernels.datamovement</code></a></td>
-<td>data movement and conversion: axpy, convert_copy, expand, transpose</td>
+<td>data movement and conversion: affine_cast, axpy, convert_copy, expand, limbs_f32, merge_rows, patch_positions, rope, row_addresses, transpose</td>
 </tr>
 <tr>
 <td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/zero.py"><code>kernels.zero</code></a></td>
 <td>target-vectorized zero fill, including partial vectors and packed BFP blocks</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/core.py"><code>kernels.core</code></a></td>
+<td>set_rounding: the core's rounding-mode register, named by a contract's <code>setup</code></td>
 </tr>
 <tr>
 <td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/quant.py"><code>kernels.quant</code></a></td>
@@ -4170,19 +4309,43 @@ on each submodule's <code>__doc__</code>:</p>
 </tr>
 <tr>
 <td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/linalg.py"><code>kernels.linalg</code></a></td>
-<td>linear algebra: mm, mv, cascade_mm, mm_bfp, mm_bfp_shuffle, mha</td>
+<td>linear algebra: mm, mv, cascade_mm, mm_bfp, mm_bfp_shuffle, mha, attention_i8 (int8 attention for YOLO26n's PSA)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/fused.py"><code>kernels.fused</code></a></td>
+<td>fused_mm: one tile's fused GEMM init, reduction and drain</td>
 </tr>
 <tr>
 <td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/conv.py"><code>kernels.conv</code></a></td>
-<td>convolutions: conv2dk1/3/14, conv2dk1_skip(<em>init), dwconv1d, bn</em>* bottleneck variants for MobileNet/ResNet</td>
+<td>convolutions: conv2dk1/3/14, conv2dk1_i8, conv2dk1_skip(<em>init), dwconv1d, bn</em>* bottleneck variants for MobileNet/ResNet</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/norm.py"><code>kernels.norm</code></a></td>
+<td>normalization: rms_norm, rms_norm_eps, layer_norm, layer_norm_eps</td>
 </tr>
 <tr>
 <td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/transformer.py"><code>kernels.transformer</code></a></td>
 <td>transformer blocks: rms_norm, layer_norm (bf16, f32, affine + cast), rope, mm_activation_epilogue</td>
 </tr>
 <tr>
+<td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/sample.py"><code>kernels.sample</code></a></td>
+<td>exact top-k next-token sampling split across columns: sample_select, sample_combine</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/moe.py"><code>kernels.moe</code></a></td>
+<td>mixture of experts: router_top_k, experts</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/ssm.py"><code>kernels.ssm</code></a></td>
+<td>state space models: selective_scan (Mamba2), gated_delta_rule (Gated DeltaNet)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/flm_gemma4.py"><code>kernels.flm_gemma4</code></a></td>
+<td>FastFlowLM's Gemma 4 cores (prefill attention, the q4nx LM head, the decode layer); not general building blocks</td>
+</tr>
+<tr>
 <td><a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/vision.py"><code>kernels.vision</code></a></td>
-<td>vision: rgba2hue, rgba2gray, gray2rgba, threshold, bitwise_or/and, filter2d, add_weighted</td>
+<td>vision: rgba2hue, rgba2gray, gray2rgba, threshold, bitwise_or/and, filter2d, add_weighted, resample_peak, resample_quantize, resize</td>
 </tr>
 </tbody>
 </table>
@@ -4190,32 +4353,32 @@ on each submodule's <code>__doc__</code>:</p>
 a complete docstring covering its kwargs, dtype constraints, and the
 raised <code>ValueError</code> envelope.  To list factory names + signatures
 without leaving the REPL:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">aie.iron.kernels</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">kernels</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">help</span><span class="p">(</span><span class="n">kernels</span><span class="p">)</span>                 <span class="c1"># package summary</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">help</span><span class="p">(</span><span class="n">kernels</span><span class="o">.</span><span class="n">conv</span><span class="p">)</span>            <span class="c1"># one submodule + all its factories</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">help</span><span class="p">(</span><span class="n">kernels</span><span class="o">.</span><span class="n">mm</span><span class="p">)</span>              <span class="c1"># one factory + full kwargs</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">kernels</span><span class="o">.</span><span class="n">mm</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>     <span class="c1"># raw access, no pager</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Tab-completion: in IPython / Jupyter,</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">kernels</span><span class="o">.&lt;</span><span class="n">TAB</span><span class="o">&gt;</span>                 <span class="c1"># category-level</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">kernels</span><span class="o">.</span><span class="n">conv</span><span class="o">.&lt;</span><span class="n">TAB</span><span class="o">&gt;</span>            <span class="c1"># factory-level</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">aie.iron.kernels</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">kernels</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">help</span><span class="p">(</span><span class="n">kernels</span><span class="p">)</span>                 <span class="c1"># package summary</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">help</span><span class="p">(</span><span class="n">kernels</span><span class="o">.</span><span class="n">conv</span><span class="p">)</span>            <span class="c1"># one submodule + all its factories</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">help</span><span class="p">(</span><span class="n">kernels</span><span class="o">.</span><span class="n">mm</span><span class="p">)</span>              <span class="c1"># one factory + full kwargs</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">kernels</span><span class="o">.</span><span class="n">mm</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>     <span class="c1"># raw access, no pager</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Tab-completion: in IPython / Jupyter,</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">kernels</span><span class="o">.&lt;</span><span class="n">TAB</span><span class="o">&gt;</span>                 <span class="c1"># category-level</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">kernels</span><span class="o">.</span><span class="n">conv</span><span class="o">.&lt;</span><span class="n">TAB</span><span class="o">&gt;</span>            <span class="c1"># factory-level</span>
 </code></pre></div>
 <p>The factories themselves are short — typically a <code>_make_extern</code> call
 plus dtype validation.  Reading the source of a factory you're about
 to use is often faster than chasing through the docstring.</p>
 <p>Factories attach a <code>KernelContract</code> to the function they return. Use
 <code>fn.expected(inputs)</code> for the configured reference calculation:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">fn</span> <span class="o">=</span> <span class="n">kernels</span><span class="o">.</span><span class="n">reduce_max</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">tile_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">roles</span>        <span class="c1"># (In, Out, Param): marker classes, not strings</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">parameter_bindings</span>  <span class="c1"># ((2, 1024),): the fixed element count</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">reference</span>    <span class="c1"># kernels.reduce_max_ref</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">tolerance</span>    <span class="c1"># exact integer comparison</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">ops_per_call</span> <span class="c1"># 1024</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">mm</span> <span class="o">=</span> <span class="n">kernels</span><span class="o">.</span><span class="n">mm</span><span class="p">(</span><span class="n">input_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">,</span> <span class="n">output_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">mm</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">acc_dtype</span>    <span class="c1"># numpy.int64: accauto is acc64 for int16</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">mm</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">reduction</span>    <span class="c1"># 64: products summed per output per call (dim_k)</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="n">kernels</span><span class="o">.</span><span class="n">mm</span><span class="o">.</span><span class="n">dtypes</span>        <span class="c1"># every (input_dtype, output_dtype) the factory supports</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">fn</span> <span class="o">=</span> <span class="n">kernels</span><span class="o">.</span><span class="n">reduce_max</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">tile_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">roles</span>        <span class="c1"># (In, Out, Param): marker classes, not strings</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">parameter_bindings</span>  <span class="c1"># ((2, 1024),): the fixed element count</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">reference</span>    <span class="c1"># kernels.reduce_max_ref</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">tolerance</span>    <span class="c1"># exact integer comparison</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">ops_per_call</span> <span class="c1"># 1024</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">mm</span> <span class="o">=</span> <span class="n">kernels</span><span class="o">.</span><span class="n">mm</span><span class="p">(</span><span class="n">input_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">,</span> <span class="n">output_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">mm</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">acc_dtype</span>    <span class="c1"># numpy.int64: accauto is acc64 for int16</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">mm</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">reduction</span>    <span class="c1"># 64: products summed per output per call (dim_k)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">kernels</span><span class="o">.</span><span class="n">DTYPES</span><span class="p">[</span><span class="s2">"mm"</span><span class="p">]</span>     <span class="c1"># every dtype combination the factory builds, as kwargs</span>
 </code></pre></div>
 <p>Some kernels compute differently by build: <code>gelu</code> reads a LUT on AIE2 and
 uses AIE2P's tanh instruction, and <code>rms_norm</code> holds a bound measured on each
@@ -4224,33 +4387,31 @@ NPU. Their contract lists one row per <code>Build</code> (an architecture, and w
 and leaves <code>contract.reference</code> and <code>contract.tolerance</code> unset. The row is
 picked when an output is checked, for the build that produced it, so a kernel
 returned before any device was bound is still judged by the build that ran:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">fn</span> <span class="o">=</span> <span class="n">kernels</span><span class="o">.</span><span class="n">rms_norm</span><span class="p">()</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">tolerance</span>               <span class="c1"># None: judged per build</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract_for</span><span class="p">()</span><span class="o">.</span><span class="n">tolerance</span>         <span class="c1"># the bound device&#39;s row; raises if none is bound</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract_for</span><span class="p">(</span><span class="s2">&quot;aie2p&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">tolerance</span>  <span class="c1"># one bf16 ulp, measured on npu2</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">fn</span><span class="o">.</span><span class="n">expected</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">arch</span><span class="o">=</span><span class="s2">&quot;aie2p&quot;</span><span class="p">)</span>   <span class="c1"># expected() and judge() take arch= too</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">fn</span> <span class="o">=</span> <span class="n">kernels</span><span class="o">.</span><span class="n">rms_norm</span><span class="p">()</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">tolerance</span>               <span class="c1"># None: judged per build</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract_for</span><span class="p">()</span><span class="o">.</span><span class="n">tolerance</span>         <span class="c1"># the bound device's row; raises if none is bound</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">fn</span><span class="o">.</span><span class="n">contract_for</span><span class="p">(</span><span class="s2">"aie2p"</span><span class="p">)</span><span class="o">.</span><span class="n">tolerance</span>  <span class="c1"># one bf16 ulp, measured on npu2</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">fn</span><span class="o">.</span><span class="n">expected</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">arch</span><span class="o">=</span><span class="s2">"aie2p"</span><span class="p">)</span>   <span class="c1"># expected() and judge() take arch= too</span>
 </code></pre></div>
-<p>The contract is what lets <code>aie.iron.algorithms.kernel_design</code> build, run and check
+<p>The contract is what lets <code>aie.iron.algorithms.KernelDesign</code> build, run and check
 a kernel without a hand-written design:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">aie.iron.algorithms</span><span class="w"> </span><span class="kn">import</span> <span class="n">kernel_design</span> <span class="k">as</span> <span class="n">kd</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">fn</span> <span class="o">=</span> <span class="n">kernels</span><span class="o">.</span><span class="n">reduce_max</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">design</span> <span class="o">=</span> <span class="n">kd</span><span class="o">.</span><span class="n">design</span><span class="p">(</span><span class="n">kernels</span><span class="o">.</span><span class="n">reduce_max</span><span class="p">,</span> <span class="n">calls</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">inputs</span> <span class="o">=</span> <span class="n">kd</span><span class="o">.</span><span class="n">sample_inputs</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">calls</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">ins</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">kd</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">inputs</span><span class="p">,</span> <span class="n">kd</span><span class="o">.</span><span class="n">output_size</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">calls</span><span class="o">=</span><span class="mi">16</span><span class="p">),</span> <span class="n">fn</span><span class="o">.</span><span class="n">output_dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span> <span class="n">fn</span><span class="o">=</span><span class="n">fn</span><span class="p">,</span> <span class="n">poison</span><span class="o">=</span><span class="kc">True</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">)</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">design</span><span class="p">(</span><span class="o">*</span><span class="n">ins</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">verdict</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">judge</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">fn</span><span class="o">.</span><span class="n">expected</span><span class="p">(</span><span class="n">inputs</span><span class="p">),</span> <span class="n">calls</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">assert</span> <span class="n">verdict</span><span class="p">,</span> <span class="n">verdict</span><span class="o">.</span><span class="n">detail</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">aie.iron.algorithms</span><span class="w"> </span><span class="kn">import</span> <span class="n">KernelDesign</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">fn</span> <span class="o">=</span> <span class="n">kernels</span><span class="o">.</span><span class="n">reduce_max</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">kd</span> <span class="o">=</span> <span class="n">KernelDesign</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">calls</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">guard</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">inputs</span> <span class="o">=</span> <span class="n">kd</span><span class="o">.</span><span class="n">sample_inputs</span><span class="p">()</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">outputs</span> <span class="o">=</span> <span class="n">kd</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">verdict</span> <span class="o">=</span> <span class="n">kd</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">inputs</span><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="k">assert</span> <span class="n">verdict</span><span class="p">,</span> <span class="n">verdict</span><span class="o">.</span><span class="n">detail</span>
 </code></pre></div>
-<p><code>kd.design(..., guard=True)</code> also catches writes past an output. Each output
-tile gets <code>kd.GUARD_BYTES</code> of <code>0x55</code> after it, which the kernel never sees.
-Size the output with <code>kd.output_size(fn, calls=16, guard=True)</code> and split the
-result with <code>kd.strip_guard(fn, out.numpy(), calls=16)</code>, which returns the
-data and the number of changed guard bytes. bfp outputs are not guarded.</p>
+<p><code>guard=True</code> also catches writes past an output. Each output tile gets
+<code>GUARD_BYTES</code> (64) of <code>0x55</code> after it, which the kernel never sees, and
+<code>kd.run</code> raises when the kernel changed any of them. bfp outputs are not
+guarded. To run the design by hand, <code>kd.upload(inputs)</code> sizes the buffers and
+<code>kd.strip_guard(outputs)</code> returns the data and the number of changed guard
+bytes.</p>
 <p>Every design validates independent tile calls, including matrix kernels.
-<code>kd.design(kernels.mm, calls=16)</code> repeats sixteen tile products, initializing
+<code>KernelDesign(kernels.mm(), calls=16)</code> repeats sixteen tile products, initializing
 each output before its call. The factory's dimensions size a tile; <code>calls</code>
 does not change its reduction length. Whole-problem <code>shape=</code> is rejected:
 algorithm integration tests own global iteration and accumulation.</p>
@@ -4278,7 +4439,10 @@ or <code>CONV_*</code> defines retains their runtime bounds.
 <code>Out</code> is written, while <code>InOut</code>
 is read and written and requires a declared <code>initializers</code> entry. Its reference
 describes the result from that initial state. Initialization occurs on every
-independent call, not only the first.</p>
+independent call, not only the first. A tensor <code>Param</code> the kernel writes, such
+as attention's running state, declares an <code>initializers</code> entry too: its bound
+value is loaded once with the design, so without one a later run reads what the
+last run left.</p>
 <p>Multiple outputs are ordered by <code>contract.out_indices</code>. Their reference,
 output sizes and device dtypes are tuples; <code>output_dtype()</code> derives the latter
 from declarations. <code>judge</code> returns one aggregate verdict, false if any output
@@ -4310,8 +4474,8 @@ it does with NaN or subnormal inputs are <em>not</em> declared. The numpy
 clips, a denormal-flushing one flushes -- and <code>tolerance</code> is the slack
 allowed against it. Declaring the same fact in two places let the two
 drift.
-- <code>.dtypes</code> on the factory: the dtype combinations it builds. The host
-  contract test builds every entry.</p>
+- <code>kernels.DTYPES["&lt;factory&gt;"]</code>: the dtype combinations a factory builds,
+  as kwargs dicts. The host contract test builds every entry.</p>
 <h2 id="standing-in-for-a-hand-built-kernel">Standing in for a hand-built kernel<a class="headerlink" href="#standing-in-for-a-hand-built-kernel" title="Permanent link">&para;</a></h2>
 <p>Code that builds a kernel by hand needs the exported <strong>symbol</strong>, the
 <strong>source file</strong> and the <strong>compile flags</strong> to line up. Every factory
@@ -4340,7 +4504,7 @@ elsewhere.</p>
   from the same object with the prefix applied. Chess-built
   kernels are the exception: <code>llvm-objcopy</code> corrupts xchesscc objects, so
   they keep bare symbols and only one variant may appear in a design.</li>
-<li><strong><code>host_args</code>.</strong> <code>kernel_design.host_args(fn, calls=)</code>
+<li><strong><code>host_args</code>.</strong> <code>KernelDesign(fn, calls=...).host_args()</code>
   reports the direction, shape, dtype and element count of each host buffer the
   design takes, in the layout the device expects: packed tiles from each
   argument's layout codec, encoded bytes for a bfp16ebs8 operand,
@@ -4361,15 +4525,15 @@ the kernels that need more than one tile, see
 <a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernel.py"><code>ExternalFunction</code></a> directly.  Every kernel
 in <code>aie.iron.kernels</code> is built this way; the factories save typing,
 they don't gate anything:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">aie.iron</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExternalFunction</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">my_kernel</span> <span class="o">=</span> <span class="n">ExternalFunction</span><span class="p">(</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="s2">&quot;my_kernel_symbol&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="n">source_file</span><span class="o">=</span><span class="s2">&quot;path/to/my_kernel.cc&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="n">arg_types</span><span class="o">=</span><span class="p">[</span><span class="n">a_ty</span><span class="p">,</span> <span class="n">b_ty</span><span class="p">,</span> <span class="n">out_ty</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">],</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="n">compile_flags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;-DTILE_SIZE=1024&quot;</span><span class="p">,</span> <span class="s2">&quot;-DUSE_VECTORIZED&quot;</span><span class="p">],</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">include_dirs</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">aie.iron</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExternalFunction</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">my_kernel</span> <span class="o">=</span> <span class="n">ExternalFunction</span><span class="p">(</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="s2">"my_kernel_symbol"</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">source_file</span><span class="o">=</span><span class="s2">"path/to/my_kernel.cc"</span><span class="p">,</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">arg_types</span><span class="o">=</span><span class="p">[</span><span class="n">a_ty</span><span class="p">,</span> <span class="n">b_ty</span><span class="p">,</span> <span class="n">out_ty</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">],</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">compile_flags</span><span class="o">=</span><span class="p">[</span><span class="s2">"-DTILE_SIZE=1024"</span><span class="p">,</span> <span class="s2">"-DUSE_VECTORIZED"</span><span class="p">],</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="n">include_dirs</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">)</span>
 </code></pre></div>
 <p>The minimal pattern around <code>_make_extern</code> in
 <a href="https://github.com/Xilinx/mlir-aie/blob/main/python/iron/kernels/eltwise.py"><code>python/iron/kernels/eltwise.py</code></a>
@@ -4389,9 +4553,11 @@ above picks it up.</p>
    to the number of meaningful output elements. Say what the kernel
    accumulates in (<code>acc_dtype</code>, <code>reduction</code>), and model overflow and
    rounding in the reference from the C++ rather than from a guess.
-   A factory with more than one dtype lists them in a <code>.dtypes</code> table.
+   A factory with more than one dtype lists them in <code>DTYPES["&lt;factory&gt;"]</code>
+   above its definition.
    Bind fixed parameters explicitly with <code>parameter_bindings</code>, publish nontrivial
-   storage with <code>layouts</code>, and initialize <code>InOut</code> tiles with <code>initializers</code>.
+   storage with <code>layouts</code>, and initialize <code>InOut</code> tiles and written <code>Param</code>
+   buffers with <code>initializers</code>.
    Declare what the kernel's trace markers measure with <code>trace=</code>:
    <code>Trace.whole_call()</code> when one <code>event0()</code> before the work and one
    <code>event1()</code> after it bracket every call of the entry symbol, or
@@ -4419,7 +4585,7 @@ changed factory with its contract, trace and cases, and what it still
 lacks. <a href="https://github.com/Xilinx/mlir-aie/blob/main/utils/kernel_checks/contribution.py"><code>utils/kernel_checks/contribution.py</code></a>
 writes it by reading the files, never running them; it is a reminder and
 never fails the pull request. To see it before pushing:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python3<span class="w"> </span>utils/kernel_checks/contribution.py<span class="w"> </span>--base<span class="w"> </span>origin/main<span class="w"> </span>--head<span class="w"> </span>HEAD
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python3<span class="w"> </span>utils/kernel_checks/contribution.py<span class="w"> </span>--base<span class="w"> </span>origin/main<span class="w"> </span>--head<span class="w"> </span>HEAD
 </code></pre></div>
 <h2 id="testing-performance-and-static-checks">Testing, performance and static checks<a class="headerlink" href="#testing-performance-and-static-checks" title="Permanent link">&para;</a></h2>
 <p>Every tier below reads the contract and the case table; none restates
@@ -4481,23 +4647,23 @@ what a kernel computes.</p>
 <p>There is no compile-only tier: a design that will not build fails the tier
 that runs it. The smoke run builds every factory's design on both
 architectures each PR, and the nightly builds every case's.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pytest<span class="w"> </span>test/python/test_kernel_contracts.py<span class="w">                        </span><span class="c1"># host</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>pytest<span class="w"> </span>test/python/npu/test_kernels_e2e.py<span class="w"> </span>-k<span class="w"> </span>eltwise<span class="w">              </span><span class="c1"># NPU, smoke</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>pytest<span class="w"> </span>test/python/npu/test_kernels_e2e.py<span class="w"> </span>-m<span class="w"> </span>extensive<span class="w"> </span>--seeds<span class="w"> </span><span class="m">3</span><span class="w">  </span><span class="c1"># NPU, everything</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>pytest<span class="w"> </span>test/python/npu/test_kernels_perf.py<span class="w"> </span>-m<span class="w"> </span>perf<span class="w"> </span>-k<span class="w"> </span>mul<span class="w">          </span><span class="c1"># time one kernel</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>pytest<span class="w"> </span>test/python/npu/test_kernels_perf.py<span class="w"> </span>-m<span class="w"> </span>perf<span class="w"> </span>--perf-out<span class="w"> </span>perf.json
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>python<span class="w"> </span>-m<span class="w"> </span>aie.utils.compile.remarks<span class="w"> </span>--target<span class="w"> </span>aie2p<span class="w"> </span>--out<span class="w"> </span>static.json
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>pytest<span class="w"> </span>test/python/test_kernel_contracts.py<span class="w">                        </span><span class="c1"># host</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>pytest<span class="w"> </span>test/python/npu/test_kernels_e2e.py<span class="w"> </span>-k<span class="w"> </span>eltwise<span class="w">              </span><span class="c1"># NPU, smoke</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>pytest<span class="w"> </span>test/python/npu/test_kernels_e2e.py<span class="w"> </span>-m<span class="w"> </span>extensive<span class="w"> </span>--seeds<span class="w"> </span><span class="m">3</span><span class="w">  </span><span class="c1"># NPU, everything</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>pytest<span class="w"> </span>test/python/npu/test_kernels_perf.py<span class="w"> </span>-m<span class="w"> </span>perf<span class="w"> </span>-k<span class="w"> </span>mul<span class="w">          </span><span class="c1"># time one kernel</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>pytest<span class="w"> </span>test/python/npu/test_kernels_perf.py<span class="w"> </span>-m<span class="w"> </span>perf<span class="w"> </span>--perf-out<span class="w"> </span>perf.json
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>python<span class="w"> </span>-m<span class="w"> </span>aie.utils.compile.remarks<span class="w"> </span>--target<span class="w"> </span>aie2p<span class="w"> </span>--out<span class="w"> </span>static.json
 </code></pre></div>
 <p>To measure a kernel change against the code before it, point
 <code>--baseline-sources</code> at a second checkout (any directory holding
 <code>aie_kernels/</code> and <code>aie_runtime_lib/</code>). The static checks then compile both
 and print each row that differs; the performance checks run each case from both,
 back to back, on the same inputs:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mkdir<span class="w"> </span>../base<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>archive<span class="w"> </span>HEAD<span class="w"> </span>aie_kernels<span class="w"> </span>aie_runtime_lib<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>-x<span class="w"> </span>-C<span class="w"> </span>../base
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>python<span class="w"> </span>-m<span class="w"> </span>aie.utils.compile.remarks<span class="w"> </span>--target<span class="w"> </span>aie2p<span class="w"> </span>--only<span class="w"> </span><span class="s1">&#39;^gelu&#39;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span>--out<span class="w"> </span>static.json<span class="w"> </span>--baseline-sources<span class="w"> </span>../base
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>pytest<span class="w"> </span>test/python/npu/test_kernels_perf.py<span class="w"> </span>-m<span class="w"> </span>perf<span class="w"> </span>-k<span class="w"> </span>gelu<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span>--baseline-sources<span class="w"> </span>../base<span class="w"> </span>--perf-meta<span class="w"> </span>meta.json
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir<span class="w"> </span>../base<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>archive<span class="w"> </span>HEAD<span class="w"> </span>aie_kernels<span class="w"> </span>aie_runtime_lib<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>-x<span class="w"> </span>-C<span class="w"> </span>../base
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>python<span class="w"> </span>-m<span class="w"> </span>aie.utils.compile.remarks<span class="w"> </span>--target<span class="w"> </span>aie2p<span class="w"> </span>--only<span class="w"> </span><span class="s1">'^gelu'</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span>--out<span class="w"> </span>static.json<span class="w"> </span>--baseline-sources<span class="w"> </span>../base
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>pytest<span class="w"> </span>test/python/npu/test_kernels_perf.py<span class="w"> </span>-m<span class="w"> </span>perf<span class="w"> </span>-k<span class="w"> </span>gelu<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span>--baseline-sources<span class="w"> </span>../base<span class="w"> </span>--perf-meta<span class="w"> </span>meta.json
 </code></pre></div>
 <h3 id="data-policy">Data policy<a class="headerlink" href="#data-policy" title="Permanent link">&para;</a></h3>
 <p>Random data is bounded by <code>fn.input_limit(dtype)</code>, using the contract's
@@ -4538,7 +4704,12 @@ check prevents publication for the whole run. Each passing case records:</p>
 <ul>
 <li><code>cycles</code>: minimum kernel-call cycles for <code>Trace.whole_call()</code> contracts,
   excluding initializers; <code>cycles_per_kop</code> normalizes by work.</li>
-<li><code>npu_us</code>: median host-runtime timing, with median absolute deviation (MAD).</li>
+<li><code>dispatch_us</code>: median host time from submit to completion of a run, with
+  its median absolute deviation (MAD); the dispatch's fixed cost is in it.</li>
+<li><code>dispatch_overhead_us</code>: the same for an empty run on the same hardware
+  context, the fixed cost alone.</li>
+<li><code>npu_us</code>: each run's dispatch less the empty run's median, the time the NPU
+  spent on the kernel's calls.</li>
 <li><code>kernel_object_bytes</code>: the tested kernel's compiled <code>.o</code> size, excluding
   harness, initializer, instruction and runtime-container files. Inline-only
   kernels have no object-size row. This starts a new series rather than
@@ -4554,7 +4725,7 @@ mode.</p>
 <a href="https://xilinx.github.io/mlir-aie/dashboard/#view=night">maintainer dashboard</a>.</p>
 <h3 id="static-checks">Static checks<a class="headerlink" href="#static-checks" title="Permanent link">&para;</a></h3>
 <p><code>aie.utils.compile.remarks</code> compiles every factory build (defaults plus
-each <code>.dtypes</code> entry) exactly as the JIT does, with Peano's
+each <code>kernels.DTYPES</code> entry) exactly as the JIT does, with Peano's
 optimization-record flags, and turns the records into per-kernel series:
 each loop's II and whether it is a zero-overhead loop, program memory,
 missing-bank loads and dropped <code>#pragma</code>s. It then reads the object: the
@@ -4728,7 +4899,7 @@ default also runs as a hardware smoke test and performance check.</p>
     
     
     
-    <a href="mailto:aup@amd.com" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
+    <a href="https://www.amd.com/en/corporate/university-program.html" target="_blank" rel="noopener" title="AMD University Program" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
     </a>
   
@@ -4747,10 +4918,10 @@ default also runs as a hardware smoke test and performance check.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>
