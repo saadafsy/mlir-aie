@@ -1,0 +1,43 @@
+{
+ "schema": 1,
+ "target": "router",
+ "metrics": [
+  "amsels_per_design",
+  "failed_mutations",
+  "failed_properties",
+  "hop_ratio",
+  "illegal",
+  "ms_per_design",
+  "survived_corruptions",
+  "unrouted"
+ ],
+ "runs": [
+  {
+   "schema": 1,
+   "target": "router",
+   "id": "42611587924",
+   "url": "https://github.com/saadafsy/mlir-aie/actions/runs/42611587924",
+   "date": "2026-11-09T11:45:50+00:00",
+   "commit": {
+    "id": "e5a3fa14879d2049295e2baff02fcc6a82697e73",
+    "url": "https://github.com/Xilinx/mlir-aie/commit/e5a3fa14879d2049295e2baff02fcc6a82697e73",
+    "message": "Export AIE2P emulation helpers, q4nx unpacking and FLM Gemma 4 constants (#3865)",
+    "timestamp": "2026-11-07T18:46:36Z"
+   },
+   "event": "schedule",
+   "pmode": null,
+   "device": "INTEL(R) XEON(R) PLATINUM 8573C",
+   "device_raw": null,
+   "provenance": {
+    "commit": "e5a3fa1487",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8573C"
+   },
+   "sane": true,
+   "published": true,
+   "n_rows": 24,
+   "exitstatus": 0,
+   "failed": [],
+   "truncated": []
+  }
+ ]
+}
